@@ -108,6 +108,18 @@ LLM evaluation and sentence embeddings, charting, marketplaces. Most deployed in
 several bound for the app stores. That's the
 [Conj 2026 talk](https://2026.clojure-conj.org/speakers).
 
+**Lisp beyond the JVM.**
+[**b12n-raylib-jlt**](https://raylib-jlt.b12n.app/) — 75 [raylib](https://www.raylib.com/)
+examples written in [Jolt](https://github.com/jolt-lang/jolt), native Clojure on Chez
+Scheme with no JVM. They call the real `libraylib` directly over its C ABI through
+`jolt.ffi`: no wrapper library, no codegen, no C shim. Tetris, boids, a solar system in
+rlgl, Fourier epicycles, Penrose tiling — 10 games, 12 in 3D, 32 shapes, 7 generative.
+
+> The interesting part is the ABI. raylib passes structs *by value* everywhere and Chez's
+> `foreign-procedure` cannot, so each struct gets the treatment its size actually earns:
+> `Color` rides in one register as a packed `:uint`, `Camera2D`/`Camera3D` go by pointer,
+> and `Vector2`/`Vector3` geometry is drawn through rlgl's scalar immediate mode.
+
 **Clojure meets AI.** Agentic workflows, MCP servers, and LLM-driven developer tooling are
 where most of my time goes now. A lot of that work is private for the moment — so the
 patterns tend to surface in talks and articles before the code does.
