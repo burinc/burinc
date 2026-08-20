@@ -109,11 +109,19 @@ several bound for the app stores. That's the
 [Conj 2026 talk](https://2026.clojure-conj.org/speakers).
 
 **Lisp beyond the JVM.**
-[**b12n-raylib-jlt**](https://raylib-jlt.b12n.app/) — 75 [raylib](https://www.raylib.com/)
-examples written in [Jolt](https://github.com/jolt-lang/jolt), native Clojure on Chez
-Scheme with no JVM. They call the real `libraylib` directly over its C ABI through
-`jolt.ffi`: no wrapper library, no codegen, no C shim. Tetris, boids, a solar system in
-rlgl, Fourier epicycles, Penrose tiling — 10 games, 12 in 3D, 32 shapes, 7 generative.
+[**b12n-raylib-jlt**](https://github.com/burinc/b12n-raylib-jlt) — 75
+[raylib](https://www.raylib.com/) examples written in
+[Jolt](https://github.com/jolt-lang/jolt), native Clojure on Chez Scheme with no JVM.
+They call the real `libraylib` directly over its C ABI through `jolt.ffi`: no wrapper
+library, no codegen, no C shim. 10 games, 12 in 3D, 32 shapes, 7 generative.
+📖 [Docs & full gallery](https://raylib-jlt.b12n.app/)
+
+<p>
+<img src="https://raw.githubusercontent.com/burinc/b12n-raylib-jlt/main/docs/demos/tetris.gif" width="200" alt="Tetris">
+<img src="https://raw.githubusercontent.com/burinc/b12n-raylib-jlt/main/docs/demos/rlgl-solar-system.gif" width="200" alt="Solar system in rlgl">
+<img src="https://raw.githubusercontent.com/burinc/b12n-raylib-jlt/main/docs/demos/penrose-tiling.gif" width="200" alt="Penrose tiling">
+<img src="https://raw.githubusercontent.com/burinc/b12n-raylib-jlt/main/docs/demos/boids.gif" width="200" alt="Boids">
+</p>
 
 > The interesting part is the ABI. raylib passes structs *by value* everywhere and Chez's
 > `foreign-procedure` cannot, so each struct gets the treatment its size actually earns:
@@ -128,7 +136,8 @@ Releasing them one at a time, Jolt first.
 where most of my time goes now. A lot of that work is private for the moment — so the
 patterns tend to surface in talks and articles before the code does.
 
-**Public bits:** [dartclojure.el](https://github.com/burinc/dartclojure.el)
+**Public bits:** [b12n-raylib-jlt](https://github.com/burinc/b12n-raylib-jlt) ·
+[dartclojure.el](https://github.com/burinc/dartclojure.el)
 (Dart/Flutter → ClojureDart, in Emacs) · [viip](https://github.com/burinc/viip) ·
 [Clojars](https://clojars.org/users/agilecreativity) ·
 [RubyGems](https://rubygems.org/profiles/agilecreativity)
