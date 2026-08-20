@@ -120,6 +120,10 @@ rlgl, Fourier epicycles, Penrose tiling — 10 games, 12 in 3D, 32 shapes, 7 gen
 > `Color` rides in one register as a packed `:uint`, `Camera2D`/`Camera3D` go by pointer,
 > and `Vector2`/`Vector3` geometry is drawn through rlgl's scalar immediate mode.
 
+It's the first of a set: the same suite runs on JVM Clojure and on
+[jank](https://jank-lang.org), each binding raylib the way its own host actually allows.
+Releasing them one at a time, Jolt first.
+
 **Clojure meets AI.** Agentic workflows, MCP servers, and LLM-driven developer tooling are
 where most of my time goes now. A lot of that work is private for the moment — so the
 patterns tend to surface in talks and articles before the code does.
