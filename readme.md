@@ -116,12 +116,18 @@ They call the real `libraylib` directly over its C ABI through `jolt.ffi`: no wr
 library, no codegen, no C shim. 10 games, 12 in 3D, 32 shapes, 7 generative.
 📖 [Docs & full gallery](https://raylib-jlt.b12n.app/)
 
-<p>
-<img src="https://raw.githubusercontent.com/burinc/b12n-raylib-jlt/main/docs/demos/tetris.gif" width="200" alt="Tetris">
-<img src="https://raw.githubusercontent.com/burinc/b12n-raylib-jlt/main/docs/demos/rlgl-solar-system.gif" width="200" alt="Solar system in rlgl">
-<img src="https://raw.githubusercontent.com/burinc/b12n-raylib-jlt/main/docs/demos/penrose-tiling.gif" width="200" alt="Penrose tiling">
-<img src="https://raw.githubusercontent.com/burinc/b12n-raylib-jlt/main/docs/demos/boids.gif" width="200" alt="Boids">
-</p>
+<table>
+<tr>
+<td align="center"><img src="https://raw.githubusercontent.com/burinc/b12n-raylib-jlt/main/docs/demos/tetris.gif" width="240" alt="Tetris"><br><sub><code>bb tetris</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/burinc/b12n-raylib-jlt/main/docs/demos/space-invaders.gif" width="240" alt="Space Invaders"><br><sub><code>bb space-invaders</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/burinc/b12n-raylib-jlt/main/docs/demos/boids.gif" width="240" alt="Boids flocking"><br><sub><code>bb boids</code></sub></td>
+</tr>
+<tr>
+<td align="center"><img src="https://raw.githubusercontent.com/burinc/b12n-raylib-jlt/main/docs/demos/waving-cubes.gif" width="240" alt="Waving cubes in 3D"><br><sub><code>bb waving-cubes</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/burinc/b12n-raylib-jlt/main/docs/demos/point-cloud.gif" width="240" alt="Rotating point cloud"><br><sub><code>bb point-cloud</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/burinc/b12n-raylib-jlt/main/docs/demos/rlgl-solar-system.gif" width="240" alt="Solar system in rlgl"><br><sub><code>bb rlgl-solar-system</code></sub></td>
+</tr>
+</table>
 
 > The interesting part is the ABI. raylib passes structs *by value* everywhere and Chez's
 > `foreign-procedure` cannot, so each struct gets the treatment its size actually earns:
