@@ -111,12 +111,14 @@ LLM evaluation and sentence embeddings, charting, marketplaces. Most deployed in
 several bound for the app stores. That's the
 [Conj 2026 talk](https://2026.clojure-conj.org/speakers).
 
-**Lisp beyond the JVM.**
-[**b12n-raylib-jlt**](https://github.com/burinc/b12n-raylib-jlt) — 75
-[raylib](https://www.raylib.com/) examples written in
-[Jolt](https://github.com/jolt-lang/jolt), native Clojure on Chez Scheme with no JVM.
-They call the real `libraylib` directly over its C ABI through `jolt.ffi`: no wrapper
-library, no codegen, no C shim. 10 games, 12 in 3D, 32 shapes, 7 generative.
+**Lisp beyond the JVM.** Two suites of [raylib](https://www.raylib.com/) demos written in
+two different native Clojures — no JVM in either — each reaching the same C game library
+the way its own host actually allows.
+
+[**b12n-raylib-jlt**](https://github.com/burinc/b12n-raylib-jlt) — 75 examples in
+[Jolt](https://github.com/jolt-lang/jolt), native Clojure on Chez Scheme. They call the
+real `libraylib` directly over its C ABI through `jolt.ffi`: no wrapper library, no
+codegen, no C shim. 10 games, 12 in 3D, 32 shapes, 7 generative.
 📖 [Docs & full gallery](https://raylib-jlt.b12n.app/)
 
 <table>
@@ -137,15 +139,37 @@ library, no codegen, no C shim. 10 games, 12 in 3D, 32 shapes, 7 generative.
 > `Color` rides in one register as a packed `:uint`, `Camera2D`/`Camera3D` go by pointer,
 > and `Vector2`/`Vector3` geometry is drawn through rlgl's scalar immediate mode.
 
-It's the first of a set: the same suite runs on JVM Clojure and on
-[jank](https://jank-lang.org), each binding raylib the way its own host actually allows.
-Releasing them one at a time, Jolt first.
+[**b12n-raylib-jnk**](https://github.com/burinc/b12n-raylib-jnk) — 209 of the 217 *official*
+raylib examples, ported to [jank](https://jank-lang.org): Clojure compiled to a real native
+binary through C++/LLVM. The `shapes`, `shaders`, `audio` and `text` categories are complete.
+📖 [Docs & full gallery](https://raylib-jnk.b12n.app/)
+
+<table>
+<tr>
+<td align="center"><img src="https://raw.githubusercontent.com/burinc/b12n-raylib-jnk/main/docs/demos/basic-pbr.gif" width="240" alt="Physically based rendering"><br><sub><code>bb basic-pbr</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/burinc/b12n-raylib-jnk/main/docs/demos/magnifying-glass.gif" width="240" alt="Magnifying glass over a texture"><br><sub><code>bb magnifying-glass</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/burinc/b12n-raylib-jnk/main/docs/demos/cel-shading.gif" width="240" alt="Cel-shaded model"><br><sub><code>bb cel-shading</code></sub></td>
+</tr>
+<tr>
+<td align="center"><img src="https://raw.githubusercontent.com/burinc/b12n-raylib-jnk/main/docs/demos/shadowmap-rendering.gif" width="240" alt="Real-time shadow mapping"><br><sub><code>bb shadowmap-rendering</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/burinc/b12n-raylib-jnk/main/docs/demos/spectrum-visualizer.gif" width="240" alt="Audio spectrum visualizer"><br><sub><code>bb spectrum-visualizer</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/burinc/b12n-raylib-jnk/main/docs/demos/animation-blending.gif" width="240" alt="Skeletal animation blending"><br><sub><code>bb animation-blending</code></sub></td>
+</tr>
+</table>
+
+> Here there is no FFI at all. `(:include "raylib.h")` in the `ns` form hands the real header
+> to the C++ compiler, and raylib becomes ordinary interop — `cpp/BeginDrawing`,
+> `cpp/RAYWHITE`, `(cpp/Camera3D (cpp/Vector3 ...) ...)`. The by-value structs that cost Jolt
+> a hand-written marshalling strategy are just constructor calls. No binding DSL, no
+> generated shim.
+
+A JVM Clojure edition is next.
 
 **Clojure meets AI.** Agentic workflows, MCP servers, and LLM-driven developer tooling are
 where most of my time goes now. A lot of that work is private for the moment — so the
 patterns tend to surface in talks and articles before the code does.
 
-**Public bits:** [b12n-raylib-jlt](https://github.com/burinc/b12n-raylib-jlt) ·
+**Public bits:** [b12n-raylib-jlt](https://github.com/burinc/b12n-raylib-jlt) · [b12n-raylib-jnk](https://github.com/burinc/b12n-raylib-jnk) ·
 [dartclojure.el](https://github.com/burinc/dartclojure.el)
 (Dart/Flutter → ClojureDart, in Emacs) · [viip](https://github.com/burinc/viip) ·
 [Clojars](https://clojars.org/users/agilecreativity) ·
