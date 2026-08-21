@@ -55,6 +55,7 @@ engineering workflows. [Get in touch](https://linkedin.com/in/burinc).
 
 | Talk | Venue | Date |
 |---|---|---|
+| **[raylib, driven from Lisp](https://www.02ship.com/blog/02ship-sydney-meetup-august-11-recap)**<br/><sub>Open-mic demo of the example suites that became [b12n-raylib-jlt](https://github.com/burinc/b12n-raylib-jlt), [b12n-raylib-jnk](https://github.com/burinc/b12n-raylib-jnk) and [b12n-raylib-clj](https://github.com/burinc/b12n-raylib-clj) — raylib, a C game library, reached from Clojure on three different runtimes. Plus the screen-capture and UI-automation tooling built to record every demo GIF instead of testing them by hand. All three are open source now.</sub> | 02Ship Sydney Meetup<br/><sub>Level 2, 63 Dixon St, Haymarket</sub> | Aug 2026 |
 | **[Three lenses, one mess: logic programming for the rest of us](https://www.linkedin.com/feed/update/urn:li:activity:7473516198232547329/)**<br/><sub>One RBAC authorization bug through three lenses, all in plain Clojure data — Prolog for role inheritance, Z3/SMT-LIB for conflicting constraints, a Mermaid-to-Prolog translation for reachability. Live REPL demo, closing on exposing solvers as LLM tools over MCP, where not hallucinating is the whole advantage.</sub> | FP-SYD<br/><sub>Microsoft, North Sydney</sub> | Jun 2026 |
 | **[Supercharging Lisp with AI: Rapid Feedback Loops with Clojure and Claude Code](https://luma.com/yt0jierk)**<br/><sub>Lightning talk to a room of 100+ builders. The demo ran on [ClojureDart](https://github.com/Tensegritics/ClojureDart) — Clojure compiled to Dart on Flutter — with a live REPL plugged straight into the running widget tree. That's the loop that lets Claude Code edit, hot-reload and assert against live UI in milliseconds instead of minutes.</sub> | AI SYD<br/><sub>Vercel × Relevance AI, Surry Hills</sub> | Apr 2026 |
 | **The Anthropic Claude Ecosystem**<br/><sub>66 slides end to end: `~/.claude` as a personal AI config layer, Claude Code across CLI/IDE/desktop/CI, the agentic loop, MCP hosts and servers, and Agent Skills' three-level progressive disclosure. 📊 [Slides](https://b12n.net/slides/?pres=mastering-claude-code&slide=1) · [PDF](https://github.com/burinc/presentations/blob/main/20260223-vibe-code-meetup/mastering-claude-code-vibe-code-meetup.pdf)</sub> | Vibe Code Meetup<br/><sub>Sydney</sub> | Feb 2026 |
@@ -197,7 +198,7 @@ three ways is the clearest map I know of where each runtime puts the boundary.
 where most of my time goes now. A lot of that work is private for the moment — so the
 patterns tend to surface in talks and articles before the code does.
 
-**Public bits:** [b12n-raylib-jlt](https://github.com/burinc/b12n-raylib-jlt) · [b12n-raylib-jnk](https://github.com/burinc/b12n-raylib-jnk) ·
+**Public bits:** [b12n-raylib-jlt](https://github.com/burinc/b12n-raylib-jlt) · [b12n-raylib-jnk](https://github.com/burinc/b12n-raylib-jnk) · [b12n-raylib-clj](https://github.com/burinc/b12n-raylib-clj) ·
 [dartclojure.el](https://github.com/burinc/dartclojure.el)
 (Dart/Flutter → ClojureDart, in Emacs) · [viip](https://github.com/burinc/viip) ·
 [Clojars](https://clojars.org/users/agilecreativity) ·
