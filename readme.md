@@ -163,7 +163,35 @@ binary through C++/LLVM. The `shapes`, `shaders`, `audio` and `text` categories 
 > a hand-written marshalling strategy are just constructor calls. No binding DSL, no
 > generated shim.
 
-A JVM Clojure edition is next.
+[**b12n-raylib-clj**](https://github.com/burinc/b12n-raylib-clj) — 78 examples in JVM
+Clojure, over [coffi](https://github.com/IGJoshua/coffi) and JDK 22+'s Panama Foreign
+Function &amp; Memory API. 23 core, 21 in 3D, 15 shapes, 9 games, plus audio, text,
+textures and shaders.
+📖 [Docs &amp; full gallery](https://raylib-clj.b12n.app/)
+
+<table>
+<tr>
+<td align="center"><img src="https://raw.githubusercontent.com/burinc/b12n-raylib-clj/main/docs/demos/tetris.gif" width="240" alt="Tetris"><br><sub><code>bb tetris</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/burinc/b12n-raylib-clj/main/docs/demos/asteroids.gif" width="240" alt="Asteroids"><br><sub><code>bb asteroids</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/burinc/b12n-raylib-clj/main/docs/demos/background-scrolling.gif" width="240" alt="Parallax background scrolling"><br><sub><code>bb background-scrolling</code></sub></td>
+</tr>
+<tr>
+<td align="center"><img src="https://raw.githubusercontent.com/burinc/b12n-raylib-clj/main/docs/demos/basic-lighting.gif" width="240" alt="Shader-based dynamic lighting"><br><sub><code>bb basic-lighting</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/burinc/b12n-raylib-clj/main/docs/demos/solar-system.gif" width="240" alt="Orbiting solar system in 3D"><br><sub><code>bb solar-system</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/burinc/b12n-raylib-clj/main/docs/demos/lorenz-attractor.gif" width="240" alt="Lorenz attractor"><br><sub><code>bb lorenz-attractor</code></sub></td>
+</tr>
+</table>
+
+> This is the one where the runtime does the marshalling for you. A binding is a single
+> `defcfn` naming the C symbol and its types, and Panama builds the downcall from that
+> description — so the by-value `Color` that Jolt hand-packs into a `:uint` is just a
+> `{:r 255 :g 0 :b 0 :a 255}` map here, serialized from a `defalias` layout. The seam
+> shows where raylib mutates through a pointer: those calls allocate in a
+> `confined-arena`, and the arena's lifetime is the one thing the abstraction will not
+> hide from you.
+
+Three hosts, one C library: Chez Scheme, C++/LLVM, and the JVM — reading the same example
+three ways is the clearest map I know of where each runtime puts the boundary.
 
 **Clojure meets AI.** Agentic workflows, MCP servers, and LLM-driven developer tooling are
 where most of my time goes now. A lot of that work is private for the moment — so the
