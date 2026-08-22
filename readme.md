@@ -164,9 +164,9 @@ binary through C++/LLVM. The `shapes`, `shaders`, `audio` and `text` categories 
 > a hand-written marshalling strategy are just constructor calls. No binding DSL, no
 > generated shim.
 
-[**b12n-raylib-clj**](https://github.com/burinc/b12n-raylib-clj) — 78 examples in JVM
+[**b12n-raylib-clj**](https://github.com/burinc/b12n-raylib-clj) — 91 examples in JVM
 Clojure, over [coffi](https://github.com/IGJoshua/coffi) and JDK 22+'s Panama Foreign
-Function &amp; Memory API. 23 core, 21 in 3D, 15 shapes, 9 games, plus audio, text,
+Function &amp; Memory API. 32 core, 21 models, 18 shapes, 9 games, plus audio, text,
 textures and shaders.
 📖 [Docs &amp; full gallery](https://raylib-clj.b12n.app/)
 
@@ -195,7 +195,7 @@ Three hosts, one C library: Chez Scheme, C++/LLVM, and the JVM — reading the s
 three ways is the clearest map I know of where each runtime puts the boundary.
 
 **And then teaching it.** [**b12n-gamedev-course**](https://github.com/burinc/b12n-gamedev-course)
-is what those 362 examples were for — a free course that teaches Lisp and game programming
+is what those 375 examples were for — a free course that teaches Lisp and game programming
 as one thing, not "game dev, incidentally in Lisp." Six phases take you from never having
 written a line of Lisp to a capstone, and every lesson builds a real, playable game that
 teaches a Lisp idiom at the same time. Phase 3 is the one only those three suites make
