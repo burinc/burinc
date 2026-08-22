@@ -194,11 +194,39 @@ textures and shaders.
 Three hosts, one C library: Chez Scheme, C++/LLVM, and the JVM — reading the same example
 three ways is the clearest map I know of where each runtime puts the boundary.
 
+**And then teaching it.** [**b12n-gamedev-course**](https://github.com/burinc/b12n-gamedev-course)
+is what those 362 examples were for — a free course that teaches Lisp and game programming
+as one thing, not "game dev, incidentally in Lisp." Six phases take you from never having
+written a line of Lisp to a capstone, and every lesson builds a real, playable game that
+teaches a Lisp idiom at the same time. Phase 3 is the one only those three suites make
+possible: port a game you wrote across all three, and watch the boundary to C move under it.
+📖 [Read the course](https://lisp-gamedev.b12n.app/)
+
+<table>
+<tr>
+<td align="center"><img src="https://raw.githubusercontent.com/burinc/b12n-gamedev-course/main/docs/demos/pong.gif" width="240" alt="Pong"><br><sub>Lesson 1 — Pong</sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/burinc/b12n-gamedev-course/main/docs/demos/breakout.gif" width="240" alt="Breakout"><br><sub>Lesson 2 — Breakout</sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/burinc/b12n-gamedev-course/main/docs/demos/snake.gif" width="240" alt="Snake"><br><sub>Lesson 3 — Snake</sub></td>
+</tr>
+<tr>
+<td align="center"><img src="https://raw.githubusercontent.com/burinc/b12n-gamedev-course/main/docs/demos/space-invaders.gif" width="240" alt="Space Invaders"><br><sub>Lesson 4 — Space Invaders</sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/burinc/b12n-gamedev-course/main/docs/demos/tetris.gif" width="120" alt="Tetris"><br><sub>Lesson 5 — Tetris</sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/burinc/b12n-gamedev-course/main/docs/demos/flappy-bird.gif" width="240" alt="Flappy Bird"><br><sub>Lesson 6 — Flappy Bird</sub></td>
+</tr>
+</table>
+
+> Those are the course's own games, running from its `exercises/` code on its own vendored
+> engine — the thing a student actually ends up with, not a borrowed screenshot. Lessons are
+> CC BY-SA 4.0 and the code EPL-2.0, so teaching from it at a meetup or a classroom needs
+> nothing from me. Phases 0 to 3 stand on the three public suites today; the later phases
+> open up as the remaining sibling repos do.
+
 **Clojure meets AI.** Agentic workflows, MCP servers, and LLM-driven developer tooling are
 where most of my time goes now. A lot of that work is private for the moment — so the
 patterns tend to surface in talks and articles before the code does.
 
-**Public bits:** [b12n-raylib-jlt](https://github.com/burinc/b12n-raylib-jlt) · [b12n-raylib-jnk](https://github.com/burinc/b12n-raylib-jnk) · [b12n-raylib-clj](https://github.com/burinc/b12n-raylib-clj) ·
+**Public bits:** [b12n-gamedev-course](https://github.com/burinc/b12n-gamedev-course) ·
+[b12n-raylib-jlt](https://github.com/burinc/b12n-raylib-jlt) · [b12n-raylib-jnk](https://github.com/burinc/b12n-raylib-jnk) · [b12n-raylib-clj](https://github.com/burinc/b12n-raylib-clj) ·
 [dartclojure.el](https://github.com/burinc/dartclojure.el)
 (Dart/Flutter → ClojureDart, in Emacs) · [viip](https://github.com/burinc/viip) ·
 [Clojars](https://clojars.org/users/agilecreativity) ·
