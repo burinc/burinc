@@ -243,15 +243,6 @@ plus four [7GUIs](https://eugenkiss.github.io/7guis/tasks/) tasks.
 </tr>
 </table>
 
-> The reconciler is Replicant's, ported with the diff algorithm unchanged: it decides *when*
-> to render and calls `IRender`/`IMemory`, with no idea GTK exists. That's what buys two
-> backends from one algorithm — real GTK4 widgets for an app, an in-memory fake for headless
-> tests. The GTK side is where the surprises are. Almost every signal is
-> `void(widget, user_data)`, but `GtkSwitch`'s `state-set` returns a `gboolean` and
-> `GtkListBox`'s `row-selected` hands back a row, and Jolt's `foreign-callable` needs
-> literal arg/return types — so the callback shape branches per signal, no data-driven
-> shortcut available. 26 live-GTK smokes each mount a real window to keep that pinned.
-
 **Clojure meets AI.** Agentic workflows, MCP servers, and LLM-driven developer tooling are
 where most of my time goes now. A lot of that work is private for the moment — so the
 patterns tend to surface in talks and articles before the code does.
