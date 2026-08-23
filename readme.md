@@ -221,12 +221,44 @@ possible: port a game you wrote across all three, and watch the boundary to C mo
 > nothing from me. Phases 0 to 3 stand on the three public suites today; the later phases
 > open up as the remaining sibling repos do.
 
+**Desktop GUI, the Replicant way.** [**glitter**](https://github.com/burinc/glitter) is a
+GTK4 renderer for [Jolt](https://github.com/jolt-lang/jolt) that follows
+[Replicant](https://github.com/cjohansen/replicant)'s model rather than React's: one
+application-state atom, a pure `state -> hiccup` view function, top-down re-render on every
+change, and event handlers that are *data* — `[[:action/inc]]`, not closures. No
+component-local state anywhere. 43 widget tags so far; the six demos below are two basics
+plus four [7GUIs](https://eugenkiss.github.io/7guis/tasks/) tasks.
+📖 [Docs &amp; guide](https://glitter.b12n.app/)
+
+<table>
+<tr>
+<td align="center"><img src="https://raw.githubusercontent.com/burinc/glitter/main/docs/demos/counter.gif" width="240" alt="Counter demo"><br><sub><code>jolt counter</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/burinc/glitter/main/docs/demos/todo.gif" width="240" alt="Todo task board"><br><sub><code>jolt todo</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/burinc/glitter/main/docs/demos/crud.gif" width="240" alt="7GUIs CRUD task"><br><sub><code>jolt crud</code></sub></td>
+</tr>
+<tr>
+<td align="center"><img src="https://raw.githubusercontent.com/burinc/glitter/main/docs/demos/flights.gif" width="240" alt="7GUIs Flight Booker task"><br><sub><code>jolt flights</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/burinc/glitter/main/docs/demos/temperature.gif" width="240" alt="7GUIs Temperature Converter task"><br><sub><code>jolt temperature</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/burinc/glitter/main/docs/demos/timer.gif" width="240" alt="7GUIs Timer task"><br><sub><code>jolt timer</code></sub></td>
+</tr>
+</table>
+
+> The reconciler is Replicant's, ported with the diff algorithm unchanged: it decides *when*
+> to render and calls `IRender`/`IMemory`, with no idea GTK exists. That's what buys two
+> backends from one algorithm — real GTK4 widgets for an app, an in-memory fake for headless
+> tests. The GTK side is where the surprises are. Almost every signal is
+> `void(widget, user_data)`, but `GtkSwitch`'s `state-set` returns a `gboolean` and
+> `GtkListBox`'s `row-selected` hands back a row, and Jolt's `foreign-callable` needs
+> literal arg/return types — so the callback shape branches per signal, no data-driven
+> shortcut available. 26 live-GTK smokes each mount a real window to keep that pinned.
+
 **Clojure meets AI.** Agentic workflows, MCP servers, and LLM-driven developer tooling are
 where most of my time goes now. A lot of that work is private for the moment — so the
 patterns tend to surface in talks and articles before the code does.
 
 **Public bits:** [b12n-gamedev-course](https://github.com/burinc/b12n-gamedev-course) ·
 [b12n-raylib-jlt](https://github.com/burinc/b12n-raylib-jlt) · [b12n-raylib-jnk](https://github.com/burinc/b12n-raylib-jnk) · [b12n-raylib-clj](https://github.com/burinc/b12n-raylib-clj) ·
+[glitter](https://github.com/burinc/glitter) (Replicant-style GTK4 for Jolt) ·
 [dartclojure.el](https://github.com/burinc/dartclojure.el)
 (Dart/Flutter → ClojureDart, in Emacs) · [viip](https://github.com/burinc/viip) ·
 [Clojars](https://clojars.org/users/agilecreativity) ·
@@ -236,7 +268,15 @@ patterns tend to surface in talks and articles before the code does.
 
 ## 🌱 Open source
 
-Contributions to [babashka/process](https://github.com/babashka/process/commits?author=agilecreativity),
+Most recent is [**jolt-lang/jolt**](https://github.com/jolt-lang/jolt/commits?author=burinc)
+itself — 15 commits across July and August 2026 to the Clojure-on-Chez-Scheme host: `:string`
+carrying NULL in both directions through the FFI, fiber-parking for subprocess pipe I/O, and
+a cross-compilation path (`tarm64osx` → `ta6osx` via Chez xpatch, macOS → Linux via `zig cc`)
+with a CI cross-smoke workflow behind it. It is the runtime under both
+[b12n-raylib-jlt](https://github.com/burinc/b12n-raylib-jlt) and
+[glitter](https://github.com/burinc/glitter), so the patches tend to fall out of building on it.
+
+Longer-running: contributions to [babashka/process](https://github.com/babashka/process/commits?author=agilecreativity),
 [bhauman/clojure-mcp](https://github.com/bhauman/clojure-mcp/commits?author=burinc),
 [zero-one-group/geni](https://github.com/zero-one-group/geni/commits?author=agilecreativity),
 [BrunoBonacci/graalvm-clojure](https://github.com/BrunoBonacci/graalvm-clojure/commits?author=agilecreativity),
