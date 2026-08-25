@@ -1,6 +1,6 @@
 # Burin Choomnuan
 
-**Senior Principal Engineer at NewsCorp Australia — ClojureDart, AI, full-stack.**
+**Senior Principal Engineer at NewsCorp Australia: ClojureDart, AI, full-stack.**
 
 Two decades in software, and I have moved with the landscape: Java → Ruby → Clojure →
 ClojureScript → and most recently ClojureDart for mobile and desktop. Over the past year
@@ -13,7 +13,7 @@ building maintainable agentic workflows in Clojure, and sharing the patterns and
 a small team learns by shipping at pace. When I'm not coding I'm writing experience
 reports for developers who appreciate the art of elegant, productive engineering.
 
-🗣️ **Speaking at [Clojure/Conj 2026](https://2026.clojure-conj.org/speakers)** — and
+🗣️ **Speaking at [Clojure/Conj 2026](https://2026.clojure-conj.org/speakers)**, and
 generally available to talk about ClojureDart, MCP/agent tooling, and using LLMs in real
 engineering workflows. [Get in touch](https://linkedin.com/in/burinc).
 
@@ -26,12 +26,12 @@ engineering workflows. [Get in touch](https://linkedin.com/in/burinc).
 
 ## 🎤 Speaking
 
-### 🔜 [Clojure/Conj 2026](https://2026.clojure-conj.org/speakers) — Charlotte, NC
+### 🔜 [Clojure/Conj 2026](https://2026.clojure-conj.org/speakers) · Charlotte, NC
 **Production ClojureDart for iOS, Android, and macOS**
 📅 Friday, October 2 · 9:30–10:10 AM · Room W207CD
 
 > Over the past twelve months a tiny team has used ClojureDart (Clojure compiled to Dart,
-> running on Flutter) to build more than a dozen production apps — a document scanner with
+> running on Flutter) to build more than a dozen production apps: a document scanner with
 > on-device OpenCV, a transit tracker with realtime GTFS, a venture-capital deck triager
 > with on-device LLM evaluation, a notes app with on-device sentence embeddings, a
 > marketplace, an encyclopedia, a financial charting app, and more. This experience report
@@ -41,11 +41,11 @@ engineering workflows. [Get in touch](https://linkedin.com/in/burinc).
 
 *My second year on the Conj stage.*
 
-### 📺 [Clojure/Conj 2025](https://www.youtube.com/watch?v=jWkEKdp0gqk) — Charlotte, NC · Nov 2025
+### 📺 [Clojure/Conj 2025](https://www.youtube.com/watch?v=jWkEKdp0gqk) · Charlotte, NC · Nov 2025
 **From Scripts to Buy-In: How Small Clojure Wins Create Big Opportunities**
 
-> How small, high-impact Clojure automation — AWS workflows, replacing clunky Postman
-> processes, automating Okta SSO — builds the credibility that earns you bigger Clojure
+> How small, high-impact Clojure automation (AWS workflows, replacing clunky Postman
+> processes, automating Okta SSO) builds the credibility that earns you bigger Clojure
 > opportunities at work.
 
 **[▶ Watch the talk](https://www.youtube.com/watch?v=jWkEKdp0gqk)** ·
@@ -55,9 +55,10 @@ engineering workflows. [Get in touch](https://linkedin.com/in/burinc).
 
 | Talk | Venue | Date |
 |---|---|---|
-| **[raylib, driven from Lisp](https://www.02ship.com/blog/02ship-sydney-meetup-august-11-recap)**<br/><sub>Open-mic demo of raylib — a C game library — driven from Lisp, across all three suites: [Jolt](https://github.com/burinc/b12n-raylib-jlt) on Chez Scheme, [jank](https://github.com/burinc/b12n-raylib-jnk) via C++/LLVM, and [JVM Clojure](https://github.com/burinc/b12n-raylib-clj) over Panama — plus the screen-capture and UI-automation tooling built to record their demo GIFs instead of testing by hand. All three suites are open source now; the capture tooling is still unreleased.</sub> | 02Ship Sydney Meetup<br/><sub>Level 2, 63 Dixon St, Haymarket</sub> | Aug 2026 |
-| **[Three lenses, one mess: logic programming for the rest of us](https://www.linkedin.com/feed/update/urn:li:activity:7473516198232547329/)**<br/><sub>One RBAC authorization bug through three lenses, all in plain Clojure data — Prolog for role inheritance, Z3/SMT-LIB for conflicting constraints, a Mermaid-to-Prolog translation for reachability. Live REPL demo, closing on exposing solvers as LLM tools over MCP, where not hallucinating is the whole advantage.</sub> | FP-SYD<br/><sub>Microsoft, North Sydney</sub> | Jun 2026 |
-| **[Supercharging Lisp with AI: Rapid Feedback Loops with Clojure and Claude Code](https://luma.com/yt0jierk)**<br/><sub>Lightning talk to a room of 100+ builders. The demo ran on [ClojureDart](https://github.com/Tensegritics/ClojureDart) — Clojure compiled to Dart on Flutter — with a live REPL plugged straight into the running widget tree. That's the loop that lets Claude Code edit, hot-reload and assert against live UI in milliseconds instead of minutes.</sub> | AI SYD<br/><sub>Vercel × Relevance AI, Surry Hills</sub> | Apr 2026 |
+| **Three native Clojures, one C game library**<br/><sub>Lightning talk to a room of typed-FP regulars (Haskell, OCaml, Rust), showing the same raylib examples running under three different Clojures: [Jolt](https://raylib-jlt.b12n.app) on Chez Scheme, [jank](https://raylib-jnk.b12n.app) via C++/LLVM, and [JVM Clojure](https://raylib-clj.b12n.app) over Panama. `bb run-all` kept a real window cycling through the gallery in the background for the whole talk. The question that came up: why write it in Jolt when Chez Scheme is right there? Because Jolt reads like Clojure (vectors, lists, sets, maps), so there was no learning curve to cross first.</sub> | FP-SYD<br/><sub>Microsoft, North Sydney</sub> | Aug 2026 |
+| **[raylib, driven from Lisp](https://www.02ship.com/blog/02ship-sydney-meetup-august-11-recap)**<br/><sub>Open-mic demo of raylib (a C game library) driven from Lisp, across all three suites: [Jolt](https://github.com/burinc/b12n-raylib-jlt) on Chez Scheme, [jank](https://github.com/burinc/b12n-raylib-jnk) via C++/LLVM, and [JVM Clojure](https://github.com/burinc/b12n-raylib-clj) over Panama, plus the screen-capture and UI-automation tooling built to record their demo GIFs instead of testing by hand. All three suites are open source now; the capture tooling is still unreleased.</sub> | 02Ship Sydney Meetup<br/><sub>Level 2, 63 Dixon St, Haymarket</sub> | Aug 2026 |
+| **[Three lenses, one mess: logic programming for the rest of us](https://www.linkedin.com/feed/update/urn:li:activity:7473516198232547329/)**<br/><sub>One RBAC authorization bug through three lenses, all in plain Clojure data: Prolog for role inheritance, Z3/SMT-LIB for conflicting constraints, a Mermaid-to-Prolog translation for reachability. Live REPL demo, closing on exposing solvers as LLM tools over MCP, where not hallucinating is the whole advantage.</sub> | FP-SYD<br/><sub>Microsoft, North Sydney</sub> | Jun 2026 |
+| **[Supercharging Lisp with AI: Rapid Feedback Loops with Clojure and Claude Code](https://luma.com/yt0jierk)**<br/><sub>Lightning talk to a room of 100+ builders. The demo ran on [ClojureDart](https://github.com/Tensegritics/ClojureDart), Clojure compiled to Dart on Flutter, with a live REPL plugged straight into the running widget tree. That's the loop that lets Claude Code edit, hot-reload and assert against live UI in milliseconds instead of minutes.</sub> | AI SYD<br/><sub>Vercel × Relevance AI, Surry Hills</sub> | Apr 2026 |
 | **The Anthropic Claude Ecosystem**<br/><sub>66 slides end to end: `~/.claude` as a personal AI config layer, Claude Code across CLI/IDE/desktop/CI, the agentic loop, MCP hosts and servers, and Agent Skills' three-level progressive disclosure. 📊 [Slides](https://b12n.net/slides/?pres=mastering-claude-code&slide=1) · [PDF](https://github.com/burinc/presentations/blob/main/20260223-vibe-code-meetup/mastering-claude-code-vibe-code-meetup.pdf)</sub> | Vibe Code Meetup<br/><sub>Sydney</sub> | Feb 2026 |
 | **Clojure for Java Developers — Building MCP Servers Without the Java Pain**<br/><sub>Cut a 350+ line Spring AI MCP server with 15+ annotations down to 180 lines with zero annotations, keeping full enterprise capability.</sub> | Sydney JVM Community<br/><sub>Canva HQ, Sydney</sub> | Jul 2025 |
 | **Clojure for the Type-Loving Functional Programmer**<br/><sub>What Clojure offers a typed-FP audience, beyond the dynamic typing and the parens.</sub> | FP-SYD | Jul 2025 |
@@ -68,7 +69,7 @@ engineering workflows. [Get in touch](https://linkedin.com/in/burinc).
 ### 🎙️ Interview
 
 **[Clojure Corner — Interview with Burin Choomnuan](https://youtu.be/bQSQua46cdc)** ·
-Flexiana — on Clojure, tooling, and building things in the open.
+Flexiana, on Clojure, tooling, and building things in the open.
 
 ### 🤝 Community
 
@@ -80,8 +81,8 @@ engineering, AI tooling and news, and practical LLM use.
 
 ## ✍️ Writing
 
-I write at **[Clojure Civitas](https://clojurecivitas.org/Burin_Choomnuan.html)** —
-11 articles, mostly browser-native ClojureScript with [Scittle](https://github.com/babashka/scittle):
+I write at **[Clojure Civitas](https://clojurecivitas.org/Burin_Choomnuan.html)**, where
+11 articles so far are mostly browser-native ClojureScript with [Scittle](https://github.com/babashka/scittle):
 
 | Article | Date |
 |---|---|
@@ -97,8 +98,8 @@ I write at **[Clojure Civitas](https://clojurecivitas.org/Burin_Choomnuan.html)*
 | [Python + ClojureScript: Pyodide Integration with Scittle](https://clojurecivitas.org/scittle/pyodide/pyodide_integration.html) | Nov 2025 |
 | [Building Browser-Native Presentations with Scittle](https://clojurecivitas.org/scittle/presentations/browser_native_slides.html) | Nov 2025 |
 
-Plus **[b12n.net](https://b12n.net)** ("Lisp's Revenge"), my own blog — built with
-Clojure/Cryogen — where I keep browser-native slide decks:
+Plus **[b12n.net](https://b12n.net)** ("Lisp's Revenge"), my own blog, built with
+Clojure/Cryogen, where I keep browser-native slide decks:
 [Mastering Claude Code](https://b12n.net/slides/?pres=mastering-claude-code&slide=1) ·
 [Diagrams as Text](https://b12n.net/slides/?pres=mermaid-diagrams&slide=1)
 
@@ -107,19 +108,19 @@ Clojure/Cryogen — where I keep browser-native slide decks:
 ## 🛠️ What I build
 
 **ClojureDart in production.** More than a dozen apps for iOS, Android and macOS in the
-past year — on-device OpenCV document scanning, realtime GTFS transit tracking, on-device
+past year: on-device OpenCV document scanning, realtime GTFS transit tracking, on-device
 LLM evaluation and sentence embeddings, charting, marketplaces. Most deployed internally,
 several bound for the app stores. That's the
 [Conj 2026 talk](https://2026.clojure-conj.org/speakers).
 
-**Lisp beyond the JVM.** Two suites of [raylib](https://www.raylib.com/) demos written in
-two different native Clojures — no JVM in either — each reaching the same C game library
-the way its own host actually allows.
+**Lisp against the C ABI.** Three suites of [raylib](https://www.raylib.com/) demos written
+in three different Clojures, each one reaching the same C game library the way its own host
+actually allows.
 
-[**b12n-raylib-jlt**](https://github.com/burinc/b12n-raylib-jlt) — 75 examples in
+[**b12n-raylib-jlt**](https://github.com/burinc/b12n-raylib-jlt): 97 examples in
 [Jolt](https://github.com/jolt-lang/jolt), native Clojure on Chez Scheme. They call the
 real `libraylib` directly over its C ABI through `jolt.ffi`: no wrapper library, no
-codegen, no C shim. 10 games, 12 in 3D, 32 shapes, 7 generative.
+codegen, no C shim. 32 shapes, 16 core, 16 in 3D, 10 games, 8 generative, 6 shaders.
 📖 [Docs & full gallery](https://raylib-jlt.b12n.app/)
 
 <table>
@@ -140,7 +141,7 @@ codegen, no C shim. 10 games, 12 in 3D, 32 shapes, 7 generative.
 > `Color` rides in one register as a packed `:uint`, `Camera2D`/`Camera3D` go by pointer,
 > and `Vector2`/`Vector3` geometry is drawn through rlgl's scalar immediate mode.
 
-[**b12n-raylib-jnk**](https://github.com/burinc/b12n-raylib-jnk) — 209 of the 217 *official*
+[**b12n-raylib-jnk**](https://github.com/burinc/b12n-raylib-jnk): 209 of the 217 *official*
 raylib examples, ported to [jank](https://jank-lang.org): Clojure compiled to a real native
 binary through C++/LLVM. The `shapes`, `shaders`, `audio` and `text` categories are complete.
 📖 [Docs & full gallery](https://raylib-jnk.b12n.app/)
@@ -159,14 +160,14 @@ binary through C++/LLVM. The `shapes`, `shaders`, `audio` and `text` categories 
 </table>
 
 > Here there is no FFI at all. `(:include "raylib.h")` in the `ns` form hands the real header
-> to the C++ compiler, and raylib becomes ordinary interop — `cpp/BeginDrawing`,
+> to the C++ compiler, and raylib becomes ordinary interop: `cpp/BeginDrawing`,
 > `cpp/RAYWHITE`, `(cpp/Camera3D (cpp/Vector3 ...) ...)`. The by-value structs that cost Jolt
 > a hand-written marshalling strategy are just constructor calls. No binding DSL, no
 > generated shim.
 
-[**b12n-raylib-clj**](https://github.com/burinc/b12n-raylib-clj) — 91 examples in JVM
+[**b12n-raylib-clj**](https://github.com/burinc/b12n-raylib-clj): 113 examples in JVM
 Clojure, over [coffi](https://github.com/IGJoshua/coffi) and JDK 22+'s Panama Foreign
-Function &amp; Memory API. 32 core, 21 models, 18 shapes, 9 games, plus audio, text,
+Function &amp; Memory API. 37 core, 28 shapes, 25 models, 9 games, plus audio, text,
 textures and shaders.
 📖 [Docs &amp; full gallery](https://raylib-clj.b12n.app/)
 
@@ -185,20 +186,20 @@ textures and shaders.
 
 > This is the one where the runtime does the marshalling for you. A binding is a single
 > `defcfn` naming the C symbol and its types, and Panama builds the downcall from that
-> description — so the by-value `Color` that Jolt hand-packs into a `:uint` is just a
+> description, so the by-value `Color` that Jolt hand-packs into a `:uint` is just a
 > `{:r 255 :g 0 :b 0 :a 255}` map here, serialized from a `defalias` layout. The seam
 > shows where raylib mutates through a pointer: those calls allocate in a
 > `confined-arena`, and the arena's lifetime is the one thing the abstraction will not
 > hide from you.
 
-Three hosts, one C library: Chez Scheme, C++/LLVM, and the JVM — reading the same example
+Three hosts, one C library: Chez Scheme, C++/LLVM, and the JVM. Reading the same example
 three ways is the clearest map I know of where each runtime puts the boundary.
 
 **Desktop GUI, the Replicant way.** [**glitter**](https://github.com/burinc/glitter) is a
 GTK4 renderer for [Jolt](https://github.com/jolt-lang/jolt) that follows
 [Replicant](https://github.com/cjohansen/replicant)'s model rather than React's: one
 application-state atom, a pure `state -> hiccup` view function, top-down re-render on every
-change, and event handlers that are *data* — `[[:action/inc]]`, not closures. No
+change, and event handlers that are *data*: `[[:action/inc]]`, not closures. No
 component-local state anywhere. 43 widget tags so far; the six demos below are two basics
 plus four [7GUIs](https://eugenkiss.github.io/7guis/tasks/) tasks.
 📖 [Docs &amp; guide](https://glitter.b12n.app/)
@@ -218,11 +219,11 @@ plus four [7GUIs](https://eugenkiss.github.io/7guis/tasks/) tasks.
 
 **Immediate-mode GUI, the other shape.** [**raygui-jlt**](https://github.com/burinc/raygui-jlt)
 is glitter's opposite number: no retained widget tree at all, just
-[raygui](https://github.com/raysan5/raygui) — raylib's companion GUI library — called
+[raygui](https://github.com/raysan5/raygui), raylib's companion GUI library, called
 straight over its C ABI through `jolt.ffi`, one shared bindings namespace under a suite of
 small programs. raygui ships as a header only, so there is no library to install: the repo
-vendors `raygui.h` and compiles its own. 24 examples across 7 groups — basics, inputs,
-collections, containers, dialogs, color and styling — each with a committed screenshot.
+vendors `raygui.h` and compiles its own. 24 examples across 7 groups (basics, inputs,
+collections, containers, dialogs, color and styling), each with a committed screenshot.
 📖 [Docs &amp; full gallery](https://raygui-jlt.b12n.app/)
 
 <table>
@@ -239,16 +240,16 @@ collections, containers, dialogs, color and styling — each with a committed sc
 </table>
 
 > The whole binding rides one signature: a bounding `Rectangle` passed **by value**,
-> application state through a pointer, an `int` result — 61 functions, nearly all shaped the
+> application state through a pointer, an `int` result; 61 functions, nearly all shaped the
 > same, no callbacks and no retained state to own. So the lifetimes almost vanish: a single
 > module-level scratch `Rectangle`, rewritten before each control, means no example allocates
-> one inside a frame. `GuiScrollPanel` is the lone exception — two rectangles in one call,
+> one inside a frame. `GuiScrollPanel` is the lone exception: two rectangles in one call,
 > where Clojure's left-to-right evaluation would let the second clobber the first, so it gets
 > a buffer of its own. Screenshots rather than GIFs here, deliberately: synthetic clicks do
 > not actuate a raylib window at all, so a recording could never show a button being pressed.
 
 **And then teaching it.** [**b12n-gamedev-course**](https://github.com/burinc/b12n-gamedev-course)
-is what those 375 raylib examples were for — a free course that teaches Lisp and game
+is what those 419 raylib examples were for: a free course that teaches Lisp and game
 programming as one thing, not "game dev, incidentally in Lisp." Six phases take you from
 never having written a line of Lisp to a capstone, and every lesson builds a real, playable
 game that teaches a Lisp idiom at the same time. Phase 3 is the one only those three raylib
@@ -258,25 +259,25 @@ move under it.
 
 <table>
 <tr>
-<td align="center"><img src="https://raw.githubusercontent.com/burinc/b12n-gamedev-course/main/docs/demos/pong.gif" width="240" alt="Pong"><br><sub>Lesson 1 — Pong</sub></td>
-<td align="center"><img src="https://raw.githubusercontent.com/burinc/b12n-gamedev-course/main/docs/demos/breakout.gif" width="240" alt="Breakout"><br><sub>Lesson 2 — Breakout</sub></td>
-<td align="center"><img src="https://raw.githubusercontent.com/burinc/b12n-gamedev-course/main/docs/demos/snake.gif" width="240" alt="Snake"><br><sub>Lesson 3 — Snake</sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/burinc/b12n-gamedev-course/main/docs/demos/pong.gif" width="240" alt="Pong"><br><sub>Lesson 1: Pong</sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/burinc/b12n-gamedev-course/main/docs/demos/breakout.gif" width="240" alt="Breakout"><br><sub>Lesson 2: Breakout</sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/burinc/b12n-gamedev-course/main/docs/demos/snake.gif" width="240" alt="Snake"><br><sub>Lesson 3: Snake</sub></td>
 </tr>
 <tr>
-<td align="center"><img src="https://raw.githubusercontent.com/burinc/b12n-gamedev-course/main/docs/demos/space-invaders.gif" width="240" alt="Space Invaders"><br><sub>Lesson 4 — Space Invaders</sub></td>
-<td align="center"><img src="https://raw.githubusercontent.com/burinc/b12n-gamedev-course/main/docs/demos/tetris.gif" width="120" alt="Tetris"><br><sub>Lesson 5 — Tetris</sub></td>
-<td align="center"><img src="https://raw.githubusercontent.com/burinc/b12n-gamedev-course/main/docs/demos/flappy-bird.gif" width="240" alt="Flappy Bird"><br><sub>Lesson 6 — Flappy Bird</sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/burinc/b12n-gamedev-course/main/docs/demos/space-invaders.gif" width="240" alt="Space Invaders"><br><sub>Lesson 4: Space Invaders</sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/burinc/b12n-gamedev-course/main/docs/demos/tetris.gif" width="120" alt="Tetris"><br><sub>Lesson 5: Tetris</sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/burinc/b12n-gamedev-course/main/docs/demos/flappy-bird.gif" width="240" alt="Flappy Bird"><br><sub>Lesson 6: Flappy Bird</sub></td>
 </tr>
 </table>
 
 > Those are the course's own games, running from its `exercises/` code on its own vendored
-> engine — the thing a student actually ends up with, not a borrowed screenshot. Lessons are
+> engine: the thing a student actually ends up with, not a borrowed screenshot. Lessons are
 > CC BY-SA 4.0 and the code EPL-2.0, so teaching from it at a meetup or a classroom needs
 > nothing from me. Phases 0 to 3 stand on the three raylib suites today; the later phases
 > open up as the remaining sibling repos do.
 
 **Clojure meets AI.** Agentic workflows, MCP servers, and LLM-driven developer tooling are
-where most of my time goes now. A lot of that work is private for the moment — so the
+where most of my time goes now. A lot of that work is private for the moment, so the
 patterns tend to surface in talks and articles before the code does.
 
 **Public bits:** [b12n-gamedev-course](https://github.com/burinc/b12n-gamedev-course) ·
@@ -293,7 +294,7 @@ patterns tend to surface in talks and articles before the code does.
 ## 🌱 Open source
 
 Most recent is [**jolt-lang/jolt**](https://github.com/jolt-lang/jolt/commits?author=burinc)
-itself — 15 commits across July and August 2026 to the Clojure-on-Chez-Scheme host: `:string`
+itself, with 15 commits across July and August 2026 to the Clojure-on-Chez-Scheme host: `:string`
 carrying NULL in both directions through the FFI, fiber-parking for subprocess pipe I/O, and
 a cross-compilation path (`tarm64osx` → `ta6osx` via Chez xpatch, macOS → Linux via `zig cc`)
 with a CI cross-smoke workflow behind it. It is the runtime under
@@ -313,7 +314,7 @@ Longer-running: contributions to [babashka/process](https://github.com/babashka/
 and [others](https://github.com/agilecreativity).
 
 > 📌 **Two handles, one person.** [@agilecreativity](https://github.com/agilecreativity)
-> is my original account, from before I found Clojure — a lot of my older OSS commits live
+> is my original account, from before I found Clojure, and a lot of my older OSS commits live
 > there. [@burinc](https://github.com/burinc) is where I work now.
 
 ---
