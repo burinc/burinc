@@ -194,33 +194,6 @@ textures and shaders.
 Three hosts, one C library: Chez Scheme, C++/LLVM, and the JVM — reading the same example
 three ways is the clearest map I know of where each runtime puts the boundary.
 
-**And then teaching it.** [**b12n-gamedev-course**](https://github.com/burinc/b12n-gamedev-course)
-is what those 375 examples were for — a free course that teaches Lisp and game programming
-as one thing, not "game dev, incidentally in Lisp." Six phases take you from never having
-written a line of Lisp to a capstone, and every lesson builds a real, playable game that
-teaches a Lisp idiom at the same time. Phase 3 is the one only those three suites make
-possible: port a game you wrote across all three, and watch the boundary to C move under it.
-📖 [Read the course](https://lisp-gamedev.b12n.app/)
-
-<table>
-<tr>
-<td align="center"><img src="https://raw.githubusercontent.com/burinc/b12n-gamedev-course/main/docs/demos/pong.gif" width="240" alt="Pong"><br><sub>Lesson 1 — Pong</sub></td>
-<td align="center"><img src="https://raw.githubusercontent.com/burinc/b12n-gamedev-course/main/docs/demos/breakout.gif" width="240" alt="Breakout"><br><sub>Lesson 2 — Breakout</sub></td>
-<td align="center"><img src="https://raw.githubusercontent.com/burinc/b12n-gamedev-course/main/docs/demos/snake.gif" width="240" alt="Snake"><br><sub>Lesson 3 — Snake</sub></td>
-</tr>
-<tr>
-<td align="center"><img src="https://raw.githubusercontent.com/burinc/b12n-gamedev-course/main/docs/demos/space-invaders.gif" width="240" alt="Space Invaders"><br><sub>Lesson 4 — Space Invaders</sub></td>
-<td align="center"><img src="https://raw.githubusercontent.com/burinc/b12n-gamedev-course/main/docs/demos/tetris.gif" width="120" alt="Tetris"><br><sub>Lesson 5 — Tetris</sub></td>
-<td align="center"><img src="https://raw.githubusercontent.com/burinc/b12n-gamedev-course/main/docs/demos/flappy-bird.gif" width="240" alt="Flappy Bird"><br><sub>Lesson 6 — Flappy Bird</sub></td>
-</tr>
-</table>
-
-> Those are the course's own games, running from its `exercises/` code on its own vendored
-> engine — the thing a student actually ends up with, not a borrowed screenshot. Lessons are
-> CC BY-SA 4.0 and the code EPL-2.0, so teaching from it at a meetup or a classroom needs
-> nothing from me. Phases 0 to 3 stand on the three public suites today; the later phases
-> open up as the remaining sibling repos do.
-
 **Desktop GUI, the Replicant way.** [**glitter**](https://github.com/burinc/glitter) is a
 GTK4 renderer for [Jolt](https://github.com/jolt-lang/jolt) that follows
 [Replicant](https://github.com/cjohansen/replicant)'s model rather than React's: one
@@ -243,6 +216,65 @@ plus four [7GUIs](https://eugenkiss.github.io/7guis/tasks/) tasks.
 </tr>
 </table>
 
+**Immediate-mode GUI, the other shape.** [**raygui-jlt**](https://github.com/burinc/raygui-jlt)
+is glitter's opposite number: no retained widget tree at all, just
+[raygui](https://github.com/raysan5/raygui) — raylib's companion GUI library — called
+straight over its C ABI through `jolt.ffi`, one shared bindings namespace under a suite of
+small programs. raygui ships as a header only, so there is no library to install: the repo
+vendors `raygui.h` and compiles its own. 24 examples across 7 groups — basics, inputs,
+collections, containers, dialogs, color and styling — each with a committed screenshot.
+📖 [Docs &amp; full gallery](https://raygui-jlt.b12n.app/)
+
+<table>
+<tr>
+<td align="center"><img src="https://raw.githubusercontent.com/burinc/raygui-jlt/main/docs/demos/style-selector.png" width="240" alt="Six vendored .rgs style themes"><br><sub><code>bb style-selector</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/burinc/raygui-jlt/main/docs/demos/color-picker.png" width="240" alt="RGB color picker with an alpha bar"><br><sub><code>bb color-picker</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/burinc/raygui-jlt/main/docs/demos/floating-window.png" width="240" alt="Two draggable floating windows"><br><sub><code>bb floating-window</code></sub></td>
+</tr>
+<tr>
+<td align="center"><img src="https://raw.githubusercontent.com/burinc/raygui-jlt/main/docs/demos/sliders.png" width="240" alt="Slider, slider bar and their value cells"><br><sub><code>bb sliders</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/burinc/raygui-jlt/main/docs/demos/list-view-ex.png" width="240" alt="List view reporting focus and scroll"><br><sub><code>bb list-view-ex</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/burinc/raygui-jlt/main/docs/demos/icon-buttons.png" width="240" alt="The embedded 1-bit icon pack on buttons"><br><sub><code>bb icon-buttons</code></sub></td>
+</tr>
+</table>
+
+> The whole binding rides one signature: a bounding `Rectangle` passed **by value**,
+> application state through a pointer, an `int` result — 61 functions, nearly all shaped the
+> same, no callbacks and no retained state to own. So the lifetimes almost vanish: a single
+> module-level scratch `Rectangle`, rewritten before each control, means no example allocates
+> one inside a frame. `GuiScrollPanel` is the lone exception — two rectangles in one call,
+> where Clojure's left-to-right evaluation would let the second clobber the first, so it gets
+> a buffer of its own. Screenshots rather than GIFs here, deliberately: synthetic clicks do
+> not actuate a raylib window at all, so a recording could never show a button being pressed.
+
+**And then teaching it.** [**b12n-gamedev-course**](https://github.com/burinc/b12n-gamedev-course)
+is what those 375 raylib examples were for — a free course that teaches Lisp and game
+programming as one thing, not "game dev, incidentally in Lisp." Six phases take you from
+never having written a line of Lisp to a capstone, and every lesson builds a real, playable
+game that teaches a Lisp idiom at the same time. Phase 3 is the one only those three raylib
+suites make possible: port a game you wrote across all three, and watch the boundary to C
+move under it.
+📖 [Read the course](https://lisp-gamedev.b12n.app/)
+
+<table>
+<tr>
+<td align="center"><img src="https://raw.githubusercontent.com/burinc/b12n-gamedev-course/main/docs/demos/pong.gif" width="240" alt="Pong"><br><sub>Lesson 1 — Pong</sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/burinc/b12n-gamedev-course/main/docs/demos/breakout.gif" width="240" alt="Breakout"><br><sub>Lesson 2 — Breakout</sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/burinc/b12n-gamedev-course/main/docs/demos/snake.gif" width="240" alt="Snake"><br><sub>Lesson 3 — Snake</sub></td>
+</tr>
+<tr>
+<td align="center"><img src="https://raw.githubusercontent.com/burinc/b12n-gamedev-course/main/docs/demos/space-invaders.gif" width="240" alt="Space Invaders"><br><sub>Lesson 4 — Space Invaders</sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/burinc/b12n-gamedev-course/main/docs/demos/tetris.gif" width="120" alt="Tetris"><br><sub>Lesson 5 — Tetris</sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/burinc/b12n-gamedev-course/main/docs/demos/flappy-bird.gif" width="240" alt="Flappy Bird"><br><sub>Lesson 6 — Flappy Bird</sub></td>
+</tr>
+</table>
+
+> Those are the course's own games, running from its `exercises/` code on its own vendored
+> engine — the thing a student actually ends up with, not a borrowed screenshot. Lessons are
+> CC BY-SA 4.0 and the code EPL-2.0, so teaching from it at a meetup or a classroom needs
+> nothing from me. Phases 0 to 3 stand on the three raylib suites today; the later phases
+> open up as the remaining sibling repos do.
+
 **Clojure meets AI.** Agentic workflows, MCP servers, and LLM-driven developer tooling are
 where most of my time goes now. A lot of that work is private for the moment — so the
 patterns tend to surface in talks and articles before the code does.
@@ -250,6 +282,7 @@ patterns tend to surface in talks and articles before the code does.
 **Public bits:** [b12n-gamedev-course](https://github.com/burinc/b12n-gamedev-course) ·
 [b12n-raylib-jlt](https://github.com/burinc/b12n-raylib-jlt) · [b12n-raylib-jnk](https://github.com/burinc/b12n-raylib-jnk) · [b12n-raylib-clj](https://github.com/burinc/b12n-raylib-clj) ·
 [glitter](https://github.com/burinc/glitter) (Replicant-style GTK4 for Jolt) ·
+[raygui-jlt](https://github.com/burinc/raygui-jlt) (immediate-mode GUI for Jolt) ·
 [dartclojure.el](https://github.com/burinc/dartclojure.el)
 (Dart/Flutter → ClojureDart, in Emacs) · [viip](https://github.com/burinc/viip) ·
 [Clojars](https://clojars.org/users/agilecreativity) ·
@@ -263,8 +296,9 @@ Most recent is [**jolt-lang/jolt**](https://github.com/jolt-lang/jolt/commits?au
 itself — 15 commits across July and August 2026 to the Clojure-on-Chez-Scheme host: `:string`
 carrying NULL in both directions through the FFI, fiber-parking for subprocess pipe I/O, and
 a cross-compilation path (`tarm64osx` → `ta6osx` via Chez xpatch, macOS → Linux via `zig cc`)
-with a CI cross-smoke workflow behind it. It is the runtime under both
-[b12n-raylib-jlt](https://github.com/burinc/b12n-raylib-jlt) and
+with a CI cross-smoke workflow behind it. It is the runtime under
+[b12n-raylib-jlt](https://github.com/burinc/b12n-raylib-jlt),
+[raygui-jlt](https://github.com/burinc/raygui-jlt) and
 [glitter](https://github.com/burinc/glitter), so the patches tend to fall out of building on it.
 
 Longer-running: contributions to [babashka/process](https://github.com/babashka/process/commits?author=agilecreativity),
