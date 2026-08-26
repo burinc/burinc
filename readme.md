@@ -60,15 +60,15 @@ engineering workflows. [Get in touch](https://linkedin.com/in/burinc).
 | **[Three lenses, one mess: logic programming for the rest of us](https://www.linkedin.com/feed/update/urn:li:activity:7473516198232547329/)**<br/><sub>One RBAC authorization bug through three lenses, all in plain Clojure data: Prolog for role inheritance, Z3/SMT-LIB for conflicting constraints, a Mermaid-to-Prolog translation for reachability. Live REPL demo, closing on exposing solvers as LLM tools over MCP, where not hallucinating is the whole advantage.</sub> | FP-SYD<br/><sub>Microsoft, North Sydney</sub> | Jun 2026 |
 | **[Supercharging Lisp with AI: Rapid Feedback Loops with Clojure and Claude Code](https://luma.com/yt0jierk)**<br/><sub>Lightning talk to a room of 100+ builders. The demo ran on [ClojureDart](https://github.com/Tensegritics/ClojureDart), Clojure compiled to Dart on Flutter, with a live REPL plugged straight into the running widget tree. That's the loop that lets Claude Code edit, hot-reload and assert against live UI in milliseconds instead of minutes.</sub> | AI SYD<br/><sub>Vercel × Relevance AI, Surry Hills</sub> | Apr 2026 |
 | **The Anthropic Claude Ecosystem**<br/><sub>66 slides end to end: `~/.claude` as a personal AI config layer, Claude Code across CLI/IDE/desktop/CI, the agentic loop, MCP hosts and servers, and Agent Skills' three-level progressive disclosure. 📊 [Slides](https://b12n.net/slides/?pres=mastering-claude-code&slide=1) · [PDF](https://github.com/burinc/presentations/blob/main/20260223-vibe-code-meetup/mastering-claude-code-vibe-code-meetup.pdf)</sub> | Vibe Code Meetup<br/><sub>Sydney</sub> | Feb 2026 |
-| **Clojure for Java Developers — Building MCP Servers Without the Java Pain**<br/><sub>Cut a 350+ line Spring AI MCP server with 15+ annotations down to 180 lines with zero annotations, keeping full enterprise capability.</sub> | Sydney JVM Community<br/><sub>Canva HQ, Sydney</sub> | Jul 2025 |
+| **Clojure for Java Developers: Building MCP Servers Without the Java Pain**<br/><sub>Cut a 350+ line Spring AI MCP server with 15+ annotations down to 180 lines with zero annotations, keeping full enterprise capability.</sub> | Sydney JVM Community<br/><sub>Canva HQ, Sydney</sub> | Jul 2025 |
 | **Clojure for the Type-Loving Functional Programmer**<br/><sub>What Clojure offers a typed-FP audience, beyond the dynamic typing and the parens.</sub> | FP-SYD | Jul 2025 |
 | **[Java/Spring Boot Troubleshooting on Steroids with Clojure REPL](https://github.com/SydneyJavaMeetup/meetup-22-spring-ai-debugging)**<br/><sub>Debugging Spring Boot from a Clojure REPL, set directly against traditional remote debugging in IntelliJ. Live coding on a sample app: debug, explore and modify at runtime with no restart and no redeploy.</sub> | Sydney Java Meetup #22<br/><sub>Infomedia, Sydney</sub> | Mar 2025 |
-| **Bridging Two Worlds — Leveraging Lisp-like Tools to Work with Python**<br/><sub>Scripting, extending and manipulating Python from Clojure with Basilisp and libpython-clj.</sub> | SYDJANGO | Dec 2024 |
+| **Bridging Two Worlds: Leveraging Lisp-like Tools to Work with Python**<br/><sub>Scripting, extending and manipulating Python from Clojure with Basilisp and libpython-clj.</sub> | SYDJANGO | Dec 2024 |
 | **Overview of Clojure for FP**<br/><sub>Live demos: libpython-clj via OpenCV, GraalVM via Babashka, AWS automation with the Cognitect AWS library, `whisper.clj` transcription, plus Rama and Jank.</sub> | FP-SYD | Aug 2024 |
 
 ### 🎙️ Interview
 
-**[Clojure Corner — Interview with Burin Choomnuan](https://youtu.be/bQSQua46cdc)** ·
+**[Clojure Corner: Interview with Burin Choomnuan](https://youtu.be/bQSQua46cdc)** ·
 Flexiana, on Clojure, tooling, and building things in the open.
 
 ### 🤝 Community
@@ -87,7 +87,7 @@ I write at **[Clojure Civitas](https://clojurecivitas.org/Burin_Choomnuan.html)*
 | Article | Date |
 |---|---|
 | [Making Fun Games with Clojure + Raylib](https://clojurecivitas.org/scicloj/clojure_jam/proposal/games_with_clojure.html) | Feb 2026 |
-| [Clojure Conj 2025 — Two Lies and a Truth Trivia](https://clojurecivitas.org/scittle/conj_2025/trivia_slideshow.html) | Nov 2025 |
+| [Clojure Conj 2025: Two Lies and a Truth Trivia](https://clojurecivitas.org/scittle/conj_2025/trivia_slideshow.html) | Nov 2025 |
 | [Browser-Native PDF Viewer with ClojureScript & Scittle](https://clojurecivitas.org/scittle/pdf/pdf_viewer.html) | Nov 2025 |
 | [Web Audio API Playground with ClojureScript & Scittle](https://clojurecivitas.org/scittle/audio/audio_playground.html) | Nov 2025 |
 | [Build Galaga with ClojureScript & Scittle](https://clojurecivitas.org/scittle/games/galaga.html) | Nov 2025 |
@@ -248,6 +248,42 @@ collections, containers, dialogs, color and styling), each with a committed scre
 > a buffer of its own. Screenshots rather than GIFs here, deliberately: synthetic clicks do
 > not actuate a raylib window at all, so a recording could never show a button being pressed.
 
+**The same model, on native macOS.** [**glitter-uikit**](https://github.com/burinc/glitter-uikit)
+keeps glitter's model exactly as it is and swaps the toolkit underneath it: one
+application-state atom, a pure `state -> hiccup` view, handlers as data, but every widget is a
+real AppKit `NSView` rather than a GTK one. It began as a port of
+[glimmer-uikit](https://github.com/jolt-lang/glimmer-uikit), the AppKit renderer for glitter's
+Reagent-style sibling, so both models sit in the same code and the contrast is easy to read.
+19 widget tags so far, with the same `:hbox`/`:vbox` sugar, and
+[7GUIs](https://eugenkiss.github.io/7guis/tasks/) tasks 1 through 6 all ship. That is one further
+than glitter itself gets, so Circle Drawer had nothing to port from and its model is original here.
+📖 [Docs &amp; guide](https://glitter-uikit.b12n.app/)
+
+<table>
+<tr>
+<td align="center"><img src="https://raw.githubusercontent.com/burinc/glitter-uikit/main/docs/demos/counter.gif" width="240" alt="Counter demo in a native AppKit window"><br><sub><code>bb counter</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/burinc/glitter-uikit/main/docs/demos/widgets.gif" width="240" alt="Every registered widget tag in one window"><br><sub><code>bb widgets</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/burinc/glitter-uikit/main/docs/demos/todo.gif" width="240" alt="Todo task board"><br><sub><code>bb todo</code></sub></td>
+</tr>
+<tr>
+<td align="center"><img src="https://raw.githubusercontent.com/burinc/glitter-uikit/main/docs/demos/crud.gif" width="240" alt="7GUIs CRUD task"><br><sub><code>bb crud</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/burinc/glitter-uikit/main/docs/demos/flights.gif" width="240" alt="7GUIs Flight Booker task"><br><sub><code>bb flights</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/burinc/glitter-uikit/main/docs/demos/timer.gif" width="240" alt="7GUIs Timer task"><br><sub><code>bb timer</code></sub></td>
+</tr>
+</table>
+
+> The split earns its keep in the demos. `set-temperature`, `parse-date` and `get-view-state` come
+> over from glitter untouched, because they are pure Clojure with no toolkit anywhere in them, so
+> only the view and `-main` had to change. Styling is where the two renderers stop agreeing. AppKit
+> has no CSS classes and no inline style property, so `:class` and `:style` are still accepted and
+> diffed by `glitter.core`, then land here as honest no-ops. Circle Drawer asked for two things the
+> renderer did not have yet. `+[NSEvent mouseLocation]` hands back a `CGPoint` by value and no
+> scalar message send can carry a struct, so the FFI layer grew struct-by-value sends.
+> `NSStackView` also lays children out in order with no way to place one freely, so the `:canvas`
+> tag is an `NSButton` whose layer holds the circles. Those circles are `CALayer`s rather than
+> views, and a layer takes no part in hit-testing, which leaves a click free to reach the canvas
+> under a circle and keeps hit-testing a pure function over the model.
+
 **And then teaching it.** [**b12n-gamedev-course**](https://github.com/burinc/b12n-gamedev-course)
 is what those 419 raylib examples were for: a free course that teaches Lisp and game
 programming as one thing, not "game dev, incidentally in Lisp." Six phases take you from
@@ -283,6 +319,7 @@ patterns tend to surface in talks and articles before the code does.
 **Public bits:** [b12n-gamedev-course](https://github.com/burinc/b12n-gamedev-course) ·
 [b12n-raylib-jlt](https://github.com/burinc/b12n-raylib-jlt) · [b12n-raylib-jnk](https://github.com/burinc/b12n-raylib-jnk) · [b12n-raylib-clj](https://github.com/burinc/b12n-raylib-clj) ·
 [glitter](https://github.com/burinc/glitter) (Replicant-style GTK4 for Jolt) ·
+[glitter-uikit](https://github.com/burinc/glitter-uikit) (the same model, on native macOS AppKit) ·
 [raygui-jlt](https://github.com/burinc/raygui-jlt) (immediate-mode GUI for Jolt) ·
 [dartclojure.el](https://github.com/burinc/dartclojure.el)
 (Dart/Flutter → ClojureDart, in Emacs) · [viip](https://github.com/burinc/viip) ·
@@ -299,8 +336,9 @@ carrying NULL in both directions through the FFI, fiber-parking for subprocess p
 a cross-compilation path (`tarm64osx` → `ta6osx` via Chez xpatch, macOS → Linux via `zig cc`)
 with a CI cross-smoke workflow behind it. It is the runtime under
 [b12n-raylib-jlt](https://github.com/burinc/b12n-raylib-jlt),
-[raygui-jlt](https://github.com/burinc/raygui-jlt) and
-[glitter](https://github.com/burinc/glitter), so the patches tend to fall out of building on it.
+[raygui-jlt](https://github.com/burinc/raygui-jlt), [glitter](https://github.com/burinc/glitter)
+and [glitter-uikit](https://github.com/burinc/glitter-uikit), so the patches tend to fall out of
+building on it.
 
 Longer-running: contributions to [babashka/process](https://github.com/babashka/process/commits?author=agilecreativity),
 [bhauman/clojure-mcp](https://github.com/bhauman/clojure-mcp/commits?author=burinc),
