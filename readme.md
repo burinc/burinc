@@ -141,9 +141,9 @@ codegen, no C shim. 32 shapes, 16 core, 16 in 3D, 10 games, 8 generative, 6 shad
 > `Color` rides in one register as a packed `:uint`, `Camera2D`/`Camera3D` go by pointer,
 > and `Vector2`/`Vector3` geometry is drawn through rlgl's scalar immediate mode.
 
-[**b12n-raylib-jnk**](https://github.com/burinc/b12n-raylib-jnk): 209 of the 217 *official*
+[**b12n-raylib-jnk**](https://github.com/burinc/b12n-raylib-jnk): 212 of the 217 *official*
 raylib examples, ported to [jank](https://jank-lang.org): Clojure compiled to a real native
-binary through C++/LLVM. The `shapes`, `shaders`, `audio` and `text` categories are complete.
+binary through C++/LLVM. The `shaders`, `textures`, `audio` and `text` categories are complete.
 📖 [Docs & full gallery](https://raylib-jnk.b12n.app/)
 
 <table>
