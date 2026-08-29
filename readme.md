@@ -55,8 +55,8 @@ engineering workflows. [Get in touch](https://linkedin.com/in/burinc).
 
 | Talk | Venue | Date |
 |---|---|---|
-| **Three native Clojures, one C game library**<br/><sub>Lightning talk to a room of typed-FP regulars (Haskell, OCaml, Rust), showing the same raylib examples running under three different Clojures: [Jolt](https://raylib-jlt.b12n.app) on Chez Scheme, [jank](https://raylib-jnk.b12n.app) via C++/LLVM, and [JVM Clojure](https://raylib-clj.b12n.app) over Panama. `bb run-all` kept a real window cycling through the gallery in the background for the whole talk. The question that came up: why write it in Jolt when Chez Scheme is right there? Because Jolt reads like Clojure (vectors, lists, sets, maps), so there was no learning curve to cross first.</sub> | FP-SYD<br/><sub>Microsoft, North Sydney</sub> | Aug 2026 |
-| **[raylib, driven from Lisp](https://www.02ship.com/blog/02ship-sydney-meetup-august-11-recap)**<br/><sub>Open-mic demo of raylib (a C game library) driven from Lisp, across all three suites: [Jolt](https://github.com/burinc/b12n-raylib-jlt) on Chez Scheme, [jank](https://github.com/burinc/b12n-raylib-jnk) via C++/LLVM, and [JVM Clojure](https://github.com/burinc/b12n-raylib-clj) over Panama, plus the screen-capture and UI-automation tooling built to record their demo GIFs instead of testing by hand. All three suites are open source now; the capture tooling is still unreleased.</sub> | 02Ship Sydney Meetup<br/><sub>Level 2, 63 Dixon St, Haymarket</sub> | Aug 2026 |
+| **Three native Clojures, one C game library**<br/><sub>Lightning talk to a room of typed-FP regulars (Haskell, OCaml, Rust), showing the same raylib examples running under three different Clojures: [Jolt](https://jlt-commons.github.io/raylib-jlt/) on Chez Scheme, [jank](https://raylib-jnk.b12n.app) via C++/LLVM, and [JVM Clojure](https://raylib-clj.b12n.app) over Panama. `bb run-all` kept a real window cycling through the gallery in the background for the whole talk. The question that came up: why write it in Jolt when Chez Scheme is right there? Because Jolt reads like Clojure (vectors, lists, sets, maps), so there was no learning curve to cross first.</sub> | FP-SYD<br/><sub>Microsoft, North Sydney</sub> | Aug 2026 |
+| **[raylib, driven from Lisp](https://www.02ship.com/blog/02ship-sydney-meetup-august-11-recap)**<br/><sub>Open-mic demo of raylib (a C game library) driven from Lisp, across all three suites: [Jolt](https://github.com/jlt-commons/raylib-jlt) on Chez Scheme, [jank](https://github.com/burinc/b12n-raylib-jnk) via C++/LLVM, and [JVM Clojure](https://github.com/burinc/b12n-raylib-clj) over Panama, plus the screen-capture and UI-automation tooling built to record their demo GIFs instead of testing by hand. All three suites are open source now; the capture tooling is still unreleased.</sub> | 02Ship Sydney Meetup<br/><sub>Level 2, 63 Dixon St, Haymarket</sub> | Aug 2026 |
 | **[Three lenses, one mess: logic programming for the rest of us](https://www.linkedin.com/feed/update/urn:li:activity:7473516198232547329/)**<br/><sub>One RBAC authorization bug through three lenses, all in plain Clojure data: Prolog for role inheritance, Z3/SMT-LIB for conflicting constraints, a Mermaid-to-Prolog translation for reachability. Live REPL demo, closing on exposing solvers as LLM tools over MCP, where not hallucinating is the whole advantage. 📊 [Slides](https://github.com/burinc/burinc/blob/master/slides/three-lenses-one-mess.pdf)</sub> | FP-SYD<br/><sub>Microsoft, North Sydney</sub> | Jun 2026 |
 | **[Supercharging Lisp with AI: Rapid Feedback Loops with Clojure and Claude Code](https://luma.com/yt0jierk)**<br/><sub>Lightning talk to a room of 100+ builders. The demo ran on [ClojureDart](https://github.com/Tensegritics/ClojureDart), Clojure compiled to Dart on Flutter, with a live REPL plugged straight into the running widget tree. That's the loop that lets Claude Code edit, hot-reload and assert against live UI in milliseconds instead of minutes.</sub> | AI SYD<br/><sub>Vercel × Relevance AI, Surry Hills</sub> | Apr 2026 |
 | **The Anthropic Claude Ecosystem**<br/><sub>66 slides end to end: `~/.claude` as a personal AI config layer, Claude Code across CLI/IDE/desktop/CI, the agentic loop, MCP hosts and servers, and Agent Skills' three-level progressive disclosure. 📊 [Slides](https://b12n.net/slides/?pres=mastering-claude-code&slide=1) · [PDF](https://github.com/burinc/presentations/blob/main/20260223-vibe-code-meetup/mastering-claude-code-vibe-code-meetup.pdf)</sub> | Vibe Code Meetup<br/><sub>Sydney</sub> | Feb 2026 |
@@ -117,22 +117,22 @@ several bound for the app stores. That's the
 in three different Clojures, each one reaching the same C game library the way its own host
 actually allows.
 
-[**b12n-raylib-jlt**](https://github.com/burinc/b12n-raylib-jlt): 97 examples in
+[**raylib-jlt**](https://github.com/jlt-commons/raylib-jlt): 97 examples in
 [Jolt](https://github.com/jolt-lang/jolt), native Clojure on Chez Scheme. They call the
 real `libraylib` directly over its C ABI through `jolt.ffi`: no wrapper library, no
 codegen, no C shim. 32 shapes, 16 core, 16 in 3D, 10 games, 8 generative, 6 shaders.
-📖 [Docs & full gallery](https://raylib-jlt.b12n.app/)
+📖 [Docs & full gallery](https://jlt-commons.github.io/raylib-jlt/)
 
 <table>
 <tr>
-<td align="center"><img src="https://raw.githubusercontent.com/burinc/b12n-raylib-jlt/main/docs/demos/tetris.gif" width="240" alt="Tetris"><br><sub><code>bb tetris</code></sub></td>
-<td align="center"><img src="https://raw.githubusercontent.com/burinc/b12n-raylib-jlt/main/docs/demos/space-invaders.gif" width="240" alt="Space Invaders"><br><sub><code>bb space-invaders</code></sub></td>
-<td align="center"><img src="https://raw.githubusercontent.com/burinc/b12n-raylib-jlt/main/docs/demos/boids.gif" width="240" alt="Boids flocking"><br><sub><code>bb boids</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/jlt-commons/raylib-jlt/main/docs/demos/tetris.gif" width="240" alt="Tetris"><br><sub><code>bb tetris</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/jlt-commons/raylib-jlt/main/docs/demos/space-invaders.gif" width="240" alt="Space Invaders"><br><sub><code>bb space-invaders</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/jlt-commons/raylib-jlt/main/docs/demos/boids.gif" width="240" alt="Boids flocking"><br><sub><code>bb boids</code></sub></td>
 </tr>
 <tr>
-<td align="center"><img src="https://raw.githubusercontent.com/burinc/b12n-raylib-jlt/main/docs/demos/waving-cubes.gif" width="240" alt="Waving cubes in 3D"><br><sub><code>bb waving-cubes</code></sub></td>
-<td align="center"><img src="https://raw.githubusercontent.com/burinc/b12n-raylib-jlt/main/docs/demos/point-cloud.gif" width="240" alt="Rotating point cloud"><br><sub><code>bb point-cloud</code></sub></td>
-<td align="center"><img src="https://raw.githubusercontent.com/burinc/b12n-raylib-jlt/main/docs/demos/rlgl-solar-system.gif" width="240" alt="Solar system in rlgl"><br><sub><code>bb rlgl-solar-system</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/jlt-commons/raylib-jlt/main/docs/demos/waving-cubes.gif" width="240" alt="Waving cubes in 3D"><br><sub><code>bb waving-cubes</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/jlt-commons/raylib-jlt/main/docs/demos/point-cloud.gif" width="240" alt="Rotating point cloud"><br><sub><code>bb point-cloud</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/jlt-commons/raylib-jlt/main/docs/demos/rlgl-solar-system.gif" width="240" alt="Solar system in rlgl"><br><sub><code>bb rlgl-solar-system</code></sub></td>
 </tr>
 </table>
 
@@ -217,25 +217,25 @@ plus four [7GUIs](https://eugenkiss.github.io/7guis/tasks/) tasks.
 </tr>
 </table>
 
-**Immediate-mode GUI, the other shape.** [**raygui-jlt**](https://github.com/burinc/raygui-jlt)
+**Immediate-mode GUI, the other shape.** [**raygui-jlt**](https://github.com/jlt-commons/raygui-jlt)
 is glitter's opposite number: no retained widget tree at all, just
 [raygui](https://github.com/raysan5/raygui), raylib's companion GUI library, called
 straight over its C ABI through `jolt.ffi`, one shared bindings namespace under a suite of
 small programs. raygui ships as a header only, so there is no library to install: the repo
 vendors `raygui.h` and compiles its own. 24 examples across 7 groups (basics, inputs,
 collections, containers, dialogs, color and styling), each with a committed screenshot.
-📖 [Docs &amp; full gallery](https://raygui-jlt.b12n.app/)
+📖 [Docs &amp; full gallery](https://jlt-commons.github.io/raygui-jlt/)
 
 <table>
 <tr>
-<td align="center"><img src="https://raw.githubusercontent.com/burinc/raygui-jlt/main/docs/demos/style-selector.png" width="240" alt="Six vendored .rgs style themes"><br><sub><code>bb style-selector</code></sub></td>
-<td align="center"><img src="https://raw.githubusercontent.com/burinc/raygui-jlt/main/docs/demos/color-picker.png" width="240" alt="RGB color picker with an alpha bar"><br><sub><code>bb color-picker</code></sub></td>
-<td align="center"><img src="https://raw.githubusercontent.com/burinc/raygui-jlt/main/docs/demos/floating-window.png" width="240" alt="Two draggable floating windows"><br><sub><code>bb floating-window</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/jlt-commons/raygui-jlt/main/docs/demos/style-selector.png" width="240" alt="Six vendored .rgs style themes"><br><sub><code>bb style-selector</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/jlt-commons/raygui-jlt/main/docs/demos/color-picker.png" width="240" alt="RGB color picker with an alpha bar"><br><sub><code>bb color-picker</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/jlt-commons/raygui-jlt/main/docs/demos/floating-window.png" width="240" alt="Two draggable floating windows"><br><sub><code>bb floating-window</code></sub></td>
 </tr>
 <tr>
-<td align="center"><img src="https://raw.githubusercontent.com/burinc/raygui-jlt/main/docs/demos/sliders.png" width="240" alt="Slider, slider bar and their value cells"><br><sub><code>bb sliders</code></sub></td>
-<td align="center"><img src="https://raw.githubusercontent.com/burinc/raygui-jlt/main/docs/demos/list-view-ex.png" width="240" alt="List view reporting focus and scroll"><br><sub><code>bb list-view-ex</code></sub></td>
-<td align="center"><img src="https://raw.githubusercontent.com/burinc/raygui-jlt/main/docs/demos/icon-buttons.png" width="240" alt="The embedded 1-bit icon pack on buttons"><br><sub><code>bb icon-buttons</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/jlt-commons/raygui-jlt/main/docs/demos/sliders.png" width="240" alt="Slider, slider bar and their value cells"><br><sub><code>bb sliders</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/jlt-commons/raygui-jlt/main/docs/demos/list-view-ex.png" width="240" alt="List view reporting focus and scroll"><br><sub><code>bb list-view-ex</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/jlt-commons/raygui-jlt/main/docs/demos/icon-buttons.png" width="240" alt="The embedded 1-bit icon pack on buttons"><br><sub><code>bb icon-buttons</code></sub></td>
 </tr>
 </table>
 
@@ -350,10 +350,10 @@ where most of my time goes now. A lot of that work is private for the moment, so
 patterns tend to surface in talks and articles before the code does.
 
 **Public bits:** [b12n-gamedev-course](https://github.com/burinc/b12n-gamedev-course) ·
-[b12n-raylib-jlt](https://github.com/burinc/b12n-raylib-jlt) · [b12n-raylib-jnk](https://github.com/burinc/b12n-raylib-jnk) · [b12n-raylib-clj](https://github.com/burinc/b12n-raylib-clj) ·
+[raylib-jlt](https://github.com/jlt-commons/raylib-jlt) · [b12n-raylib-jnk](https://github.com/burinc/b12n-raylib-jnk) · [b12n-raylib-clj](https://github.com/burinc/b12n-raylib-clj) ·
 [glitter](https://github.com/burinc/glitter) (Replicant-style GTK4 for Jolt) ·
 [glitter-uikit](https://github.com/burinc/glitter-uikit) (the same model, on native macOS AppKit) ·
-[raygui-jlt](https://github.com/burinc/raygui-jlt) (immediate-mode GUI for Jolt) ·
+[raygui-jlt](https://github.com/jlt-commons/raygui-jlt) (immediate-mode GUI for Jolt) ·
 [raygui-jnk](https://github.com/burinc/raygui-jnk) (the same suite, for jank) ·
 [dartclojure.el](https://github.com/burinc/dartclojure.el)
 (Dart/Flutter → ClojureDart, in Emacs) · [viip](https://github.com/burinc/viip) ·
@@ -364,13 +364,54 @@ patterns tend to surface in talks and articles before the code does.
 
 ## 🌱 Open source
 
+### jlt-commons
+
+I started [**jlt-commons**](https://github.com/jlt-commons) in August 2026, a
+community-led home for [Jolt](https://github.com/jolt-lang/jolt) libraries and tooling.
+Jolt is young, so most of its ecosystem is still one person's side project, and a side
+project stops the month its author gets busy. The org gives that work somewhere to land,
+and gives anyone who wants to help a place to do it that is not someone else's personal
+account.
+
+There are two ways in. Adoption is for a project whose maintainer can no longer look
+after it. We ask the current owner first, every time, and prefer a transfer over a fork
+so the stars and the issue history come along. Incubation is for new work, whether that
+is a port of a Clojure library people already rely on or something the core team would
+rather not own. The bar is a real gap and someone willing to maintain it, which is
+deliberately low while the language is this young.
+
+It is not an official Jolt project. The language and the libraries its core team
+maintains live in [jolt-lang](https://github.com/jolt-lang).
+
+What is there so far:
+
+- [**raylib-jlt**](https://github.com/jlt-commons/raylib-jlt), the 97 raylib examples
+  above, and the first thing I moved across from my own account. Its
+  [docs](https://jlt-commons.github.io/raylib-jlt/) moved with it, off my own hosting
+  and onto the org's.
+- [**raygui-jlt**](https://github.com/jlt-commons/raygui-jlt), the immediate-mode GUI
+  suite, transferred the same day and onto the same
+  [docs setup](https://jlt-commons.github.io/raygui-jlt/).
+- [**docs-engine**](https://github.com/jlt-commons/docs-engine), the generator behind
+  every project's documentation. A project writes markdown and a short config file, and
+  gets syntax highlighting, mermaid diagrams and a theme that follows the reader's
+  light or dark setting, without maintaining any of that itself.
+- [**meta**](https://github.com/jlt-commons/meta), the governance and the proposal
+  queue, kept short enough that people will actually read it.
+
+If you maintain something in Jolt and would rather it outlived your own free time, or
+you want to build something and would rather not do it alone, the
+[proposal queue](https://github.com/jlt-commons/meta) is open.
+
+### Upstream
+
 Most recent is [**jolt-lang/jolt**](https://github.com/jolt-lang/jolt/commits?author=burinc)
 itself, with 15 commits across July and August 2026 to the Clojure-on-Chez-Scheme host: `:string`
 carrying NULL in both directions through the FFI, fiber-parking for subprocess pipe I/O, and
 a cross-compilation path (`tarm64osx` → `ta6osx` via Chez xpatch, macOS → Linux via `zig cc`)
 with a CI cross-smoke workflow behind it. It is the runtime under
-[b12n-raylib-jlt](https://github.com/burinc/b12n-raylib-jlt),
-[raygui-jlt](https://github.com/burinc/raygui-jlt), [glitter](https://github.com/burinc/glitter)
+[raylib-jlt](https://github.com/jlt-commons/raylib-jlt),
+[raygui-jlt](https://github.com/jlt-commons/raygui-jlt), [glitter](https://github.com/burinc/glitter)
 and [glitter-uikit](https://github.com/burinc/glitter-uikit), so the patches tend to fall out of
 building on it.
 
