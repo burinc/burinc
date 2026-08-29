@@ -248,6 +248,39 @@ collections, containers, dialogs, color and styling), each with a committed scre
 > a buffer of its own. Screenshots rather than GIFs here, deliberately: synthetic clicks do
 > not actuate a raylib window at all, so a recording could never show a button being pressed.
 
+**The same suite, a different Clojure.** [**raygui-jnk**](https://github.com/burinc/raygui-jnk)
+is raygui-jlt's twin in [jank](https://jank-lang.org), which compiles Clojure through C++ and
+LLVM rather than Chez Scheme. Same 24 examples, same names, same descriptions, so the two ports
+read as one library seen through two implementations. What differs sits underneath: jank reaches
+raygui as C++ rather than over an FFI, and the binding ships as an installable package. raygui
+was not available to jank before this, which is why the sibling
+[b12n-raylib-jnk](https://github.com/burinc/b12n-raylib-jnk) substituted keyboard controls in
+seventeen of its examples. Those can be real controls now, on one dependency line, with no
+vendored copy and no build script of your own.
+📖 [Docs &amp; full gallery](https://raygui-jnk.b12n.app/)
+
+<table>
+<tr>
+<td align="center"><img src="https://raw.githubusercontent.com/burinc/raygui-jnk/main/docs/demos/tab-bar.png" width="240" alt="Tabs with close requests"><br><sub><code>bb tab-bar</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/burinc/raygui-jnk/main/docs/demos/color-picker-hsv.png" width="240" alt="The HSV picker and panel"><br><sub><code>bb color-picker-hsv</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/burinc/raygui-jnk/main/docs/demos/scroll-panel.png" width="240" alt="A scroll panel over oversized content"><br><sub><code>bb scroll-panel</code></sub></td>
+</tr>
+<tr>
+<td align="center"><img src="https://raw.githubusercontent.com/burinc/raygui-jnk/main/docs/demos/gui-state.png" width="240" alt="Forced states, alpha and lock"><br><sub><code>bb gui-state</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/burinc/raygui-jnk/main/docs/demos/custom-input-box.png" width="240" alt="A hand-built input dialog over a panel"><br><sub><code>bb custom-input-box</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/burinc/raygui-jnk/main/docs/demos/spinner-value-box.png" width="240" alt="Spinner and value box, clamped and typed"><br><sub><code>bb spinner-value-box</code></sub></td>
+</tr>
+</table>
+
+> Jolt hands raygui a `Rectangle` by value. jank cannot, because no native value crosses a jank
+> function boundary at all, so the whole shape inverts. Every wrapper takes `x y w h` as plain
+> numbers and builds its `Rectangle` inside its own body, never accepting or returning one, and
+> application state lives in boxed cells allocated before the frame loop. A closure counts as a
+> boundary too, so `loop`/`recur` does work that `doseq` cannot. 53 of raygui's 61 functions are
+> bound that way; most of the rest are font and icon-file calls the six vendored `.rgs` themes
+> make unnecessary, since each one carries its own embedded font. The six examples above are
+> deliberately different ones from raygui-jlt's, so between the two sections all 7 groups show.
+
 **The same model, on native macOS.** [**glitter-uikit**](https://github.com/burinc/glitter-uikit)
 keeps glitter's model exactly as it is and swaps the toolkit underneath it: one
 application-state atom, a pure `state -> hiccup` view, handlers as data, but every widget is a
@@ -321,6 +354,7 @@ patterns tend to surface in talks and articles before the code does.
 [glitter](https://github.com/burinc/glitter) (Replicant-style GTK4 for Jolt) ·
 [glitter-uikit](https://github.com/burinc/glitter-uikit) (the same model, on native macOS AppKit) ·
 [raygui-jlt](https://github.com/burinc/raygui-jlt) (immediate-mode GUI for Jolt) ·
+[raygui-jnk](https://github.com/burinc/raygui-jnk) (the same suite, for jank) ·
 [dartclojure.el](https://github.com/burinc/dartclojure.el)
 (Dart/Flutter → ClojureDart, in Emacs) · [viip](https://github.com/burinc/viip) ·
 [Clojars](https://clojars.org/users/agilecreativity) ·
