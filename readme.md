@@ -117,10 +117,11 @@ several bound for the app stores. That's the
 in three different Clojures, each one reaching the same C game library the way its own host
 actually allows.
 
-[**raylib-jlt**](https://github.com/jlt-commons/raylib-jlt): 97 examples in
+[**raylib-jlt**](https://github.com/jlt-commons/raylib-jlt): 119 examples in
 [Jolt](https://github.com/jolt-lang/jolt), native Clojure on Chez Scheme. They call the
 real `libraylib` directly over its C ABI through `jolt.ffi`: no wrapper library, no
-codegen, no C shim. 32 shapes, 16 core, 16 in 3D, 10 games, 8 generative, 6 shaders.
+codegen, no C shim. 42 shapes, 23 core, 16 in 3D, 10 games, 10 shaders, 9 generative,
+5 text, 4 textures.
 📖 [Docs & full gallery](https://jlt-commons.github.io/raylib-jlt/)
 
 <table>
@@ -195,25 +196,25 @@ textures and shaders.
 Three hosts, one C library: Chez Scheme, C++/LLVM, and the JVM. Reading the same example
 three ways is the clearest map I know of where each runtime puts the boundary.
 
-**Desktop GUI, the Replicant way.** [**glitter**](https://github.com/burinc/glitter) is a
+**Desktop GUI, the Replicant way.** [**glitter**](https://github.com/jlt-commons/glitter) is a
 GTK4 renderer for [Jolt](https://github.com/jolt-lang/jolt) that follows
 [Replicant](https://github.com/cjohansen/replicant)'s model rather than React's: one
 application-state atom, a pure `state -> hiccup` view function, top-down re-render on every
 change, and event handlers that are *data*: `[[:action/inc]]`, not closures. No
 component-local state anywhere. 43 widget tags so far; the six demos below are two basics
 plus four [7GUIs](https://eugenkiss.github.io/7guis/tasks/) tasks.
-📖 [Docs &amp; guide](https://glitter.b12n.app/)
+📖 [Docs &amp; guide](https://jlt-commons.github.io/glitter/)
 
 <table>
 <tr>
-<td align="center"><img src="https://raw.githubusercontent.com/burinc/glitter/main/docs/demos/counter.gif" width="240" alt="Counter demo"><br><sub><code>jolt counter</code></sub></td>
-<td align="center"><img src="https://raw.githubusercontent.com/burinc/glitter/main/docs/demos/todo.gif" width="240" alt="Todo task board"><br><sub><code>jolt todo</code></sub></td>
-<td align="center"><img src="https://raw.githubusercontent.com/burinc/glitter/main/docs/demos/crud.gif" width="240" alt="7GUIs CRUD task"><br><sub><code>jolt crud</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/jlt-commons/glitter/main/docs/demos/counter.gif" width="240" alt="Counter demo"><br><sub><code>jolt counter</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/jlt-commons/glitter/main/docs/demos/todo.gif" width="240" alt="Todo task board"><br><sub><code>jolt todo</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/jlt-commons/glitter/main/docs/demos/crud.gif" width="240" alt="7GUIs CRUD task"><br><sub><code>jolt crud</code></sub></td>
 </tr>
 <tr>
-<td align="center"><img src="https://raw.githubusercontent.com/burinc/glitter/main/docs/demos/flights.gif" width="240" alt="7GUIs Flight Booker task"><br><sub><code>jolt flights</code></sub></td>
-<td align="center"><img src="https://raw.githubusercontent.com/burinc/glitter/main/docs/demos/temperature.gif" width="240" alt="7GUIs Temperature Converter task"><br><sub><code>jolt temperature</code></sub></td>
-<td align="center"><img src="https://raw.githubusercontent.com/burinc/glitter/main/docs/demos/timer.gif" width="240" alt="7GUIs Timer task"><br><sub><code>jolt timer</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/jlt-commons/glitter/main/docs/demos/flights.gif" width="240" alt="7GUIs Flight Booker task"><br><sub><code>jolt flights</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/jlt-commons/glitter/main/docs/demos/temperature.gif" width="240" alt="7GUIs Temperature Converter task"><br><sub><code>jolt temperature</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/jlt-commons/glitter/main/docs/demos/timer.gif" width="240" alt="7GUIs Timer task"><br><sub><code>jolt timer</code></sub></td>
 </tr>
 </table>
 
@@ -281,7 +282,7 @@ vendored copy and no build script of your own.
 > make unnecessary, since each one carries its own embedded font. The six examples above are
 > deliberately different ones from raygui-jlt's, so between the two sections all 7 groups show.
 
-**The same model, on native macOS.** [**glitter-uikit**](https://github.com/burinc/glitter-uikit)
+**The same model, on native macOS.** [**glitter-uikit**](https://github.com/jlt-commons/glitter-uikit)
 keeps glitter's model exactly as it is and swaps the toolkit underneath it: one
 application-state atom, a pure `state -> hiccup` view, handlers as data, but every widget is a
 real AppKit `NSView` rather than a GTK one. It began as a port of
@@ -290,18 +291,18 @@ Reagent-style sibling, so both models sit in the same code and the contrast is e
 19 widget tags so far, with the same `:hbox`/`:vbox` sugar, and
 [7GUIs](https://eugenkiss.github.io/7guis/tasks/) tasks 1 through 6 all ship. That is one further
 than glitter itself gets, so Circle Drawer had nothing to port from and its model is original here.
-📖 [Docs &amp; guide](https://glitter-uikit.b12n.app/)
+📖 [Docs &amp; guide](https://jlt-commons.github.io/glitter-uikit/)
 
 <table>
 <tr>
-<td align="center"><img src="https://raw.githubusercontent.com/burinc/glitter-uikit/main/docs/demos/counter.gif" width="240" alt="Counter demo in a native AppKit window"><br><sub><code>bb counter</code></sub></td>
-<td align="center"><img src="https://raw.githubusercontent.com/burinc/glitter-uikit/main/docs/demos/widgets.gif" width="240" alt="Every registered widget tag in one window"><br><sub><code>bb widgets</code></sub></td>
-<td align="center"><img src="https://raw.githubusercontent.com/burinc/glitter-uikit/main/docs/demos/todo.gif" width="240" alt="Todo task board"><br><sub><code>bb todo</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/jlt-commons/glitter-uikit/main/docs/demos/counter.gif" width="240" alt="Counter demo in a native AppKit window"><br><sub><code>bb counter</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/jlt-commons/glitter-uikit/main/docs/demos/widgets.gif" width="240" alt="Every registered widget tag in one window"><br><sub><code>bb widgets</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/jlt-commons/glitter-uikit/main/docs/demos/todo.gif" width="240" alt="Todo task board"><br><sub><code>bb todo</code></sub></td>
 </tr>
 <tr>
-<td align="center"><img src="https://raw.githubusercontent.com/burinc/glitter-uikit/main/docs/demos/crud.gif" width="240" alt="7GUIs CRUD task"><br><sub><code>bb crud</code></sub></td>
-<td align="center"><img src="https://raw.githubusercontent.com/burinc/glitter-uikit/main/docs/demos/flights.gif" width="240" alt="7GUIs Flight Booker task"><br><sub><code>bb flights</code></sub></td>
-<td align="center"><img src="https://raw.githubusercontent.com/burinc/glitter-uikit/main/docs/demos/timer.gif" width="240" alt="7GUIs Timer task"><br><sub><code>bb timer</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/jlt-commons/glitter-uikit/main/docs/demos/crud.gif" width="240" alt="7GUIs CRUD task"><br><sub><code>bb crud</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/jlt-commons/glitter-uikit/main/docs/demos/flights.gif" width="240" alt="7GUIs Flight Booker task"><br><sub><code>bb flights</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/jlt-commons/glitter-uikit/main/docs/demos/timer.gif" width="240" alt="7GUIs Timer task"><br><sub><code>bb timer</code></sub></td>
 </tr>
 </table>
 
@@ -351,8 +352,8 @@ patterns tend to surface in talks and articles before the code does.
 
 **Public bits:** [b12n-gamedev-course](https://github.com/burinc/b12n-gamedev-course) ·
 [raylib-jlt](https://github.com/jlt-commons/raylib-jlt) · [b12n-raylib-jnk](https://github.com/burinc/b12n-raylib-jnk) · [b12n-raylib-clj](https://github.com/burinc/b12n-raylib-clj) ·
-[glitter](https://github.com/burinc/glitter) (Replicant-style GTK4 for Jolt) ·
-[glitter-uikit](https://github.com/burinc/glitter-uikit) (the same model, on native macOS AppKit) ·
+[glitter](https://github.com/jlt-commons/glitter) (Replicant-style GTK4 for Jolt) ·
+[glitter-uikit](https://github.com/jlt-commons/glitter-uikit) (the same model, on native macOS AppKit) ·
 [raygui-jlt](https://github.com/jlt-commons/raygui-jlt) (immediate-mode GUI for Jolt) ·
 [raygui-jnk](https://github.com/burinc/raygui-jnk) (the same suite, for jank) ·
 [dartclojure.el](https://github.com/burinc/dartclojure.el)
@@ -411,8 +412,8 @@ carrying NULL in both directions through the FFI, fiber-parking for subprocess p
 a cross-compilation path (`tarm64osx` → `ta6osx` via Chez xpatch, macOS → Linux via `zig cc`)
 with a CI cross-smoke workflow behind it. It is the runtime under
 [raylib-jlt](https://github.com/jlt-commons/raylib-jlt),
-[raygui-jlt](https://github.com/jlt-commons/raygui-jlt), [glitter](https://github.com/burinc/glitter)
-and [glitter-uikit](https://github.com/burinc/glitter-uikit), so the patches tend to fall out of
+[raygui-jlt](https://github.com/jlt-commons/raygui-jlt), [glitter](https://github.com/jlt-commons/glitter)
+and [glitter-uikit](https://github.com/jlt-commons/glitter-uikit), so the patches tend to fall out of
 building on it.
 
 Longer-running: contributions to [babashka/process](https://github.com/babashka/process/commits?author=agilecreativity),
