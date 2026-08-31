@@ -353,6 +353,7 @@ patterns tend to surface in talks and articles before the code does.
 **Public bits:** [b12n-gamedev-course](https://github.com/burinc/b12n-gamedev-course) ·
 [raylib-jlt](https://github.com/jlt-commons/raylib-jlt) · [b12n-raylib-jnk](https://github.com/burinc/b12n-raylib-jnk) · [b12n-raylib-clj](https://github.com/burinc/b12n-raylib-clj) ·
 [glitter](https://github.com/jlt-commons/glitter) (Replicant-style GTK4 for Jolt) ·
+[glitter-gl](https://github.com/jlt-commons/glitter-gl) (OpenGL geometry and shaders for it) ·
 [glitter-uikit](https://github.com/jlt-commons/glitter-uikit) (the same model, on native macOS AppKit) ·
 [raygui-jlt](https://github.com/jlt-commons/raygui-jlt) (immediate-mode GUI for Jolt) ·
 [raygui-jnk](https://github.com/burinc/raygui-jnk) (the same suite, for jank) ·
@@ -386,13 +387,18 @@ maintains live in [jolt-lang](https://github.com/jolt-lang).
 
 What is there so far:
 
-- [**raylib-jlt**](https://github.com/jlt-commons/raylib-jlt), the 97 raylib examples
+- [**raylib-jlt**](https://github.com/jlt-commons/raylib-jlt), the 119 raylib examples
   above, and the first thing I moved across from my own account. Its
   [docs](https://jlt-commons.github.io/raylib-jlt/) moved with it, off my own hosting
   and onto the org's.
 - [**raygui-jlt**](https://github.com/jlt-commons/raygui-jlt), the immediate-mode GUI
   suite, transferred the same day and onto the same
   [docs setup](https://jlt-commons.github.io/raygui-jlt/).
+- [**glitter**](https://github.com/jlt-commons/glitter), the GTK4 renderer above, with
+  [**glitter-gl**](https://github.com/jlt-commons/glitter-gl) for OpenGL geometry and
+  shaders and [**glitter-uikit**](https://github.com/jlt-commons/glitter-uikit) for the
+  same model on native macOS AppKit. All three went across together and publish at
+  [jlt-commons.github.io](https://jlt-commons.github.io/glitter/).
 - [**docs-engine**](https://github.com/jlt-commons/docs-engine), the generator behind
   every project's documentation. A project writes markdown and a short config file, and
   gets syntax highlighting, mermaid diagrams and a theme that follows the reader's
