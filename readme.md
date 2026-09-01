@@ -347,10 +347,15 @@ move under it.
 > open up as the remaining sibling repos do.
 
 **Clojure meets AI.** Agentic workflows, MCP servers, and LLM-driven developer tooling are
-where most of my time goes now. A lot of that work is private for the moment, so the
-patterns tend to surface in talks and articles before the code does.
+where most of my time goes now. The first piece of that is out:
+[**mcp-tkx**](https://github.com/b12n-oss/mcp-tkx) builds Model Context Protocol clients
+and servers in Clojure and ClojureScript, across five protocol revisions, and one session
+can serve both the handshake era and the newer stateless one at once. Plenty of the rest
+is still private, so those patterns tend to surface in talks and articles before the code
+does.
 
-**Public bits:** [b12n-gamedev-course](https://github.com/burinc/b12n-gamedev-course) ·
+**Public bits:** [mcp-tkx](https://github.com/b12n-oss/mcp-tkx) (MCP clients and servers,
+five protocol revisions) · [b12n-gamedev-course](https://github.com/burinc/b12n-gamedev-course) ·
 [raylib-jlt](https://github.com/jlt-commons/raylib-jlt) · [b12n-raylib-jnk](https://github.com/burinc/b12n-raylib-jnk) · [b12n-raylib-clj](https://github.com/burinc/b12n-raylib-clj) ·
 [glitter](https://github.com/jlt-commons/glitter) (Replicant-style GTK4 for Jolt) ·
 [glitter-gl](https://github.com/jlt-commons/glitter-gl) (OpenGL geometry and shaders for it) ·
@@ -409,6 +414,27 @@ What is there so far:
 If you maintain something in Jolt and would rather it outlived your own free time, or
 you want to build something and would rather not do it alone, the
 [proposal queue](https://github.com/jlt-commons/meta) is open.
+
+### b12n-oss
+
+[**b12n-oss**](https://github.com/b12n-oss) is where my own open source lands. It is a
+different thing from jlt-commons above, which is community-led and specific to Jolt. This
+one is just mine, and the name is a numeronym for `burinchoomnuan`: the first letter, the
+twelve in between, then the last, the same trick as `i18n` and `k8s`.
+
+- [**mcp-tkx**](https://github.com/b12n-oss/mcp-tkx), a Clojure and ClojureScript library
+  for building Model Context Protocol clients and servers. Five protocol revisions from
+  `2024-11-05` through `2026-07-28`, and a single session can serve both the handshake
+  era and the stateless one, so a server does not have to pick a side while its clients
+  catch up. The newest revision drops the handshake entirely and replaces
+  server-initiated requests with multi round-trip results, which is a real shift if you
+  already run a server. It is a fork of [Metosin's
+  mcp-toolkit](https://github.com/metosin/mcp-toolkit), with the namespaces deliberately
+  unchanged so it stays a drop-in. Runs on the JVM, on Node, and on Babashka.
+  [Docs](https://b12n-oss.github.io/mcp-tkx/), EPL-2.0.
+- [**docs-engine**](https://github.com/b12n-oss/docs-engine), a fork of the jlt-commons
+  generator, so projects in this org publish through the same setup rather than a second
+  one built from scratch.
 
 ### Upstream
 
