@@ -196,6 +196,30 @@ textures and shaders.
 Three hosts, one C library: Chez Scheme, C++/LLVM, and the JVM. Reading the same example
 three ways is the clearest map I know of where each runtime puts the boundary.
 
+**And then on a phone.** [**raylib-ios**](https://github.com/jlt-commons/raylib-ios) puts
+raylib and SDL2 on a physical iPhone, driven from the same Jolt. Two things make it work
+and neither is obvious. raylib ships no iOS platform layer, so SDL2 compiled for iOS
+becomes one, and both link into the executable as static archives. iOS forbids generating
+code at run time, which rules out a JIT, so Chez's portable bytecode ships the interpreter
+as the app instead and nothing is compiled on the device.
+
+Seventeen scenes at 52 to 60 fps. Three of them are byte-identical to files written for
+Android, sha256 verified, because the scene contract is pure and the platform never
+appears in it. The guides are about what the device taught us rather than what the code
+implied: calling into C was not the bottleneck, `GetFPS` returns a plausible wrong number
+if you call it the obvious way, and one upstream bug report got withdrawn after hardware
+contradicted a correct reading of the source.
+📖 [Docs &amp; gallery](https://jlt-commons.github.io/raylib-ios/)
+
+<table>
+<tr>
+<td align="center"><img src="https://raw.githubusercontent.com/jlt-commons/raylib-ios/main/docs/images/kaleidoscope.gif" width="180" alt="Kaleidoscope"><br><sub>kaleidoscope</sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/jlt-commons/raylib-ios/main/docs/images/spirograph.gif" width="180" alt="Spirograph"><br><sub>spirograph</sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/jlt-commons/raylib-ios/main/docs/images/lorenz.gif" width="180" alt="Lorenz attractor"><br><sub>lorenz</sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/jlt-commons/raylib-ios/main/docs/images/tree.gif" width="180" alt="A fractal tree swaying"><br><sub>fractal tree</sub></td>
+</tr>
+</table>
+
 **Desktop GUI, the Replicant way.** [**glitter**](https://github.com/jlt-commons/glitter) is a
 GTK4 renderer for [Jolt](https://github.com/jolt-lang/jolt) that follows
 [Replicant](https://github.com/cjohansen/replicant)'s model rather than React's: one
