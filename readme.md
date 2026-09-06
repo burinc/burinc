@@ -55,8 +55,8 @@ engineering workflows. [Get in touch](https://linkedin.com/in/burinc).
 
 | Talk | Venue | Date |
 |---|---|---|
-| **Three native Clojures, one C game library**<br/><sub>Lightning talk to a room of typed-FP regulars (Haskell, OCaml, Rust), showing the same raylib examples running under three different Clojures: [Jolt](https://jlt-commons.github.io/raylib-jlt/) on Chez Scheme, [jank](https://raylib-jnk.b12n.app) via C++/LLVM, and [JVM Clojure](https://raylib-clj.b12n.app) over Panama. `bb run-all` kept a real window cycling through the gallery in the background for the whole talk. The question that came up: why write it in Jolt when Chez Scheme is right there? Because Jolt reads like Clojure (vectors, lists, sets, maps), so there was no learning curve to cross first.</sub> | FP-SYD<br/><sub>Microsoft, North Sydney</sub> | Aug 2026 |
-| **[raylib, driven from Lisp](https://www.02ship.com/blog/02ship-sydney-meetup-august-11-recap)**<br/><sub>Open-mic demo of raylib (a C game library) driven from Lisp, across all three suites: [Jolt](https://github.com/jlt-commons/raylib-jlt) on Chez Scheme, [jank](https://github.com/burinc/b12n-raylib-jnk) via C++/LLVM, and [JVM Clojure](https://github.com/burinc/b12n-raylib-clj) over Panama, plus the screen-capture and UI-automation tooling built to record their demo GIFs instead of testing by hand. All three suites are open source now; the capture tooling is still unreleased.</sub> | 02Ship Sydney Meetup<br/><sub>Level 2, 63 Dixon St, Haymarket</sub> | Aug 2026 |
+| **Three native Clojures, one C game library**<br/><sub>Lightning talk to a room of typed-FP regulars (Haskell, OCaml, Rust), showing the same raylib examples running under three different Clojures: [Jolt](https://jlt-commons.github.io/raylib-jlt/) on Chez Scheme, [jank](https://b12n-oss.github.io/raylib-jnk/) via C++/LLVM, and [JVM Clojure](https://raylib-clj.b12n.app) over Panama. `bb run-all` kept a real window cycling through the gallery in the background for the whole talk. The question that came up: why write it in Jolt when Chez Scheme is right there? Because Jolt reads like Clojure (vectors, lists, sets, maps), so there was no learning curve to cross first.</sub> | FP-SYD<br/><sub>Microsoft, North Sydney</sub> | Aug 2026 |
+| **[raylib, driven from Lisp](https://www.02ship.com/blog/02ship-sydney-meetup-august-11-recap)**<br/><sub>Open-mic demo of raylib (a C game library) driven from Lisp, across all three suites: [Jolt](https://github.com/jlt-commons/raylib-jlt) on Chez Scheme, [jank](https://github.com/b12n-oss/raylib-jnk) via C++/LLVM, and [JVM Clojure](https://github.com/b12n-oss/raylib-clj) over Panama, plus the screen-capture and UI-automation tooling built to record their demo GIFs instead of testing by hand. All three suites are open source now; the capture tooling is still unreleased.</sub> | 02Ship Sydney Meetup<br/><sub>Level 2, 63 Dixon St, Haymarket</sub> | Aug 2026 |
 | **[Three lenses, one mess: logic programming for the rest of us](https://www.linkedin.com/feed/update/urn:li:activity:7473516198232547329/)**<br/><sub>One RBAC authorization bug through three lenses, all in plain Clojure data: Prolog for role inheritance, Z3/SMT-LIB for conflicting constraints, a Mermaid-to-Prolog translation for reachability. Live REPL demo, closing on exposing solvers as LLM tools over MCP, where not hallucinating is the whole advantage. 📊 [Slides](https://github.com/burinc/burinc/blob/master/slides/three-lenses-one-mess.pdf)</sub> | FP-SYD<br/><sub>Microsoft, North Sydney</sub> | Jun 2026 |
 | **[Supercharging Lisp with AI: Rapid Feedback Loops with Clojure and Claude Code](https://luma.com/yt0jierk)**<br/><sub>Lightning talk to a room of 100+ builders. The demo ran on [ClojureDart](https://github.com/Tensegritics/ClojureDart), Clojure compiled to Dart on Flutter, with a live REPL plugged straight into the running widget tree. That's the loop that lets Claude Code edit, hot-reload and assert against live UI in milliseconds instead of minutes.</sub> | AI SYD<br/><sub>Vercel × Relevance AI, Surry Hills</sub> | Apr 2026 |
 | **The Anthropic Claude Ecosystem**<br/><sub>66 slides end to end: `~/.claude` as a personal AI config layer, Claude Code across CLI/IDE/desktop/CI, the agentic loop, MCP hosts and servers, and Agent Skills' three-level progressive disclosure. 📊 [Slides](https://b12n.net/slides/?pres=mastering-claude-code&slide=1) · [PDF](https://github.com/burinc/presentations/blob/main/20260223-vibe-code-meetup/mastering-claude-code-vibe-code-meetup.pdf)</sub> | Vibe Code Meetup<br/><sub>Sydney</sub> | Feb 2026 |
@@ -142,21 +142,21 @@ codegen, no C shim. 42 shapes, 23 core, 16 in 3D, 10 games, 10 shaders, 9 genera
 > `Color` rides in one register as a packed `:uint`, `Camera2D`/`Camera3D` go by pointer,
 > and `Vector2`/`Vector3` geometry is drawn through rlgl's scalar immediate mode.
 
-[**b12n-raylib-jnk**](https://github.com/burinc/b12n-raylib-jnk): 212 of the 217 *official*
+[**raylib-jnk**](https://github.com/b12n-oss/raylib-jnk): 212 of the 217 *official*
 raylib examples, ported to [jank](https://jank-lang.org): Clojure compiled to a real native
 binary through C++/LLVM. The `shaders`, `textures`, `audio` and `text` categories are complete.
-📖 [Docs & full gallery](https://raylib-jnk.b12n.app/)
+📖 [Docs & full gallery](https://b12n-oss.github.io/raylib-jnk/)
 
 <table>
 <tr>
-<td align="center"><img src="https://raw.githubusercontent.com/burinc/b12n-raylib-jnk/main/docs/demos/basic-pbr.gif" width="240" alt="Physically based rendering"><br><sub><code>bb basic-pbr</code></sub></td>
-<td align="center"><img src="https://raw.githubusercontent.com/burinc/b12n-raylib-jnk/main/docs/demos/magnifying-glass.gif" width="240" alt="Magnifying glass over a texture"><br><sub><code>bb magnifying-glass</code></sub></td>
-<td align="center"><img src="https://raw.githubusercontent.com/burinc/b12n-raylib-jnk/main/docs/demos/cel-shading.gif" width="240" alt="Cel-shaded model"><br><sub><code>bb cel-shading</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/b12n-oss/raylib-jnk/main/docs/demos/basic-pbr.gif" width="240" alt="Physically based rendering"><br><sub><code>bb basic-pbr</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/b12n-oss/raylib-jnk/main/docs/demos/magnifying-glass.gif" width="240" alt="Magnifying glass over a texture"><br><sub><code>bb magnifying-glass</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/b12n-oss/raylib-jnk/main/docs/demos/cel-shading.gif" width="240" alt="Cel-shaded model"><br><sub><code>bb cel-shading</code></sub></td>
 </tr>
 <tr>
-<td align="center"><img src="https://raw.githubusercontent.com/burinc/b12n-raylib-jnk/main/docs/demos/shadowmap-rendering.gif" width="240" alt="Real-time shadow mapping"><br><sub><code>bb shadowmap-rendering</code></sub></td>
-<td align="center"><img src="https://raw.githubusercontent.com/burinc/b12n-raylib-jnk/main/docs/demos/spectrum-visualizer.gif" width="240" alt="Audio spectrum visualizer"><br><sub><code>bb spectrum-visualizer</code></sub></td>
-<td align="center"><img src="https://raw.githubusercontent.com/burinc/b12n-raylib-jnk/main/docs/demos/animation-blending.gif" width="240" alt="Skeletal animation blending"><br><sub><code>bb animation-blending</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/b12n-oss/raylib-jnk/main/docs/demos/shadowmap-rendering.gif" width="240" alt="Real-time shadow mapping"><br><sub><code>bb shadowmap-rendering</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/b12n-oss/raylib-jnk/main/docs/demos/spectrum-visualizer.gif" width="240" alt="Audio spectrum visualizer"><br><sub><code>bb spectrum-visualizer</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/b12n-oss/raylib-jnk/main/docs/demos/animation-blending.gif" width="240" alt="Skeletal animation blending"><br><sub><code>bb animation-blending</code></sub></td>
 </tr>
 </table>
 
@@ -166,7 +166,7 @@ binary through C++/LLVM. The `shaders`, `textures`, `audio` and `text` categorie
 > a hand-written marshalling strategy are just constructor calls. No binding DSL, no
 > generated shim.
 
-[**b12n-raylib-clj**](https://github.com/burinc/b12n-raylib-clj): 113 examples in JVM
+[**raylib-clj**](https://github.com/b12n-oss/raylib-clj): 113 examples in JVM
 Clojure, over [coffi](https://github.com/IGJoshua/coffi) and JDK 22+'s Panama Foreign
 Function &amp; Memory API. 37 core, 28 shapes, 25 models, 9 games, plus audio, text,
 textures and shaders.
@@ -174,14 +174,14 @@ textures and shaders.
 
 <table>
 <tr>
-<td align="center"><img src="https://raw.githubusercontent.com/burinc/b12n-raylib-clj/main/docs/demos/tetris.gif" width="240" alt="Tetris"><br><sub><code>bb tetris</code></sub></td>
-<td align="center"><img src="https://raw.githubusercontent.com/burinc/b12n-raylib-clj/main/docs/demos/asteroids.gif" width="240" alt="Asteroids"><br><sub><code>bb asteroids</code></sub></td>
-<td align="center"><img src="https://raw.githubusercontent.com/burinc/b12n-raylib-clj/main/docs/demos/background-scrolling.gif" width="240" alt="Parallax background scrolling"><br><sub><code>bb background-scrolling</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/b12n-oss/raylib-clj/main/docs/demos/tetris.gif" width="240" alt="Tetris"><br><sub><code>bb tetris</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/b12n-oss/raylib-clj/main/docs/demos/asteroids.gif" width="240" alt="Asteroids"><br><sub><code>bb asteroids</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/b12n-oss/raylib-clj/main/docs/demos/background-scrolling.gif" width="240" alt="Parallax background scrolling"><br><sub><code>bb background-scrolling</code></sub></td>
 </tr>
 <tr>
-<td align="center"><img src="https://raw.githubusercontent.com/burinc/b12n-raylib-clj/main/docs/demos/basic-lighting.gif" width="240" alt="Shader-based dynamic lighting"><br><sub><code>bb basic-lighting</code></sub></td>
-<td align="center"><img src="https://raw.githubusercontent.com/burinc/b12n-raylib-clj/main/docs/demos/solar-system.gif" width="240" alt="Orbiting solar system in 3D"><br><sub><code>bb solar-system</code></sub></td>
-<td align="center"><img src="https://raw.githubusercontent.com/burinc/b12n-raylib-clj/main/docs/demos/lorenz-attractor.gif" width="240" alt="Lorenz attractor"><br><sub><code>bb lorenz-attractor</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/b12n-oss/raylib-clj/main/docs/demos/basic-lighting.gif" width="240" alt="Shader-based dynamic lighting"><br><sub><code>bb basic-lighting</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/b12n-oss/raylib-clj/main/docs/demos/solar-system.gif" width="240" alt="Orbiting solar system in 3D"><br><sub><code>bb solar-system</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/b12n-oss/raylib-clj/main/docs/demos/lorenz-attractor.gif" width="240" alt="Lorenz attractor"><br><sub><code>bb lorenz-attractor</code></sub></td>
 </tr>
 </table>
 
@@ -273,27 +273,27 @@ collections, containers, dialogs, color and styling), each with a committed scre
 > a buffer of its own. Screenshots rather than GIFs here, deliberately: synthetic clicks do
 > not actuate a raylib window at all, so a recording could never show a button being pressed.
 
-**The same suite, a different Clojure.** [**raygui-jnk**](https://github.com/burinc/raygui-jnk)
+**The same suite, a different Clojure.** [**raygui-jnk**](https://github.com/b12n-oss/raygui-jnk)
 is raygui-jlt's twin in [jank](https://jank-lang.org), which compiles Clojure through C++ and
 LLVM rather than Chez Scheme. Same 24 examples, same names, same descriptions, so the two ports
 read as one library seen through two implementations. What differs sits underneath: jank reaches
 raygui as C++ rather than over an FFI, and the binding ships as an installable package. raygui
 was not available to jank before this, which is why the sibling
-[b12n-raylib-jnk](https://github.com/burinc/b12n-raylib-jnk) substituted keyboard controls in
+[raylib-jnk](https://github.com/b12n-oss/raylib-jnk) substituted keyboard controls in
 seventeen of its examples. Those can be real controls now, on one dependency line, with no
 vendored copy and no build script of your own.
-📖 [Docs &amp; full gallery](https://raygui-jnk.b12n.app/)
+📖 [Docs &amp; full gallery](https://b12n-oss.github.io/raygui-jnk/)
 
 <table>
 <tr>
-<td align="center"><img src="https://raw.githubusercontent.com/burinc/raygui-jnk/main/docs/demos/tab-bar.png" width="240" alt="Tabs with close requests"><br><sub><code>bb tab-bar</code></sub></td>
-<td align="center"><img src="https://raw.githubusercontent.com/burinc/raygui-jnk/main/docs/demos/color-picker-hsv.png" width="240" alt="The HSV picker and panel"><br><sub><code>bb color-picker-hsv</code></sub></td>
-<td align="center"><img src="https://raw.githubusercontent.com/burinc/raygui-jnk/main/docs/demos/scroll-panel.png" width="240" alt="A scroll panel over oversized content"><br><sub><code>bb scroll-panel</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/b12n-oss/raygui-jnk/main/docs/demos/tab-bar.png" width="240" alt="Tabs with close requests"><br><sub><code>bb tab-bar</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/b12n-oss/raygui-jnk/main/docs/demos/color-picker-hsv.png" width="240" alt="The HSV picker and panel"><br><sub><code>bb color-picker-hsv</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/b12n-oss/raygui-jnk/main/docs/demos/scroll-panel.png" width="240" alt="A scroll panel over oversized content"><br><sub><code>bb scroll-panel</code></sub></td>
 </tr>
 <tr>
-<td align="center"><img src="https://raw.githubusercontent.com/burinc/raygui-jnk/main/docs/demos/gui-state.png" width="240" alt="Forced states, alpha and lock"><br><sub><code>bb gui-state</code></sub></td>
-<td align="center"><img src="https://raw.githubusercontent.com/burinc/raygui-jnk/main/docs/demos/custom-input-box.png" width="240" alt="A hand-built input dialog over a panel"><br><sub><code>bb custom-input-box</code></sub></td>
-<td align="center"><img src="https://raw.githubusercontent.com/burinc/raygui-jnk/main/docs/demos/spinner-value-box.png" width="240" alt="Spinner and value box, clamped and typed"><br><sub><code>bb spinner-value-box</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/b12n-oss/raygui-jnk/main/docs/demos/gui-state.png" width="240" alt="Forced states, alpha and lock"><br><sub><code>bb gui-state</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/b12n-oss/raygui-jnk/main/docs/demos/custom-input-box.png" width="240" alt="A hand-built input dialog over a panel"><br><sub><code>bb custom-input-box</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/b12n-oss/raygui-jnk/main/docs/demos/spinner-value-box.png" width="240" alt="Spinner and value box, clamped and typed"><br><sub><code>bb spinner-value-box</code></sub></td>
 </tr>
 </table>
 
@@ -380,12 +380,12 @@ does.
 
 **Public bits:** [mcp-tkx](https://github.com/b12n-oss/mcp-tkx) (MCP clients and servers,
 five protocol revisions) · [b12n-gamedev-course](https://github.com/burinc/b12n-gamedev-course) ·
-[raylib-jlt](https://github.com/jlt-commons/raylib-jlt) · [b12n-raylib-jnk](https://github.com/burinc/b12n-raylib-jnk) · [b12n-raylib-clj](https://github.com/burinc/b12n-raylib-clj) ·
+[raylib-jlt](https://github.com/jlt-commons/raylib-jlt) · [raylib-jnk](https://github.com/b12n-oss/raylib-jnk) · [raylib-clj](https://github.com/b12n-oss/raylib-clj) ·
 [glitter](https://github.com/jlt-commons/glitter) (Replicant-style GTK4 for Jolt) ·
 [glitter-gl](https://github.com/jlt-commons/glitter-gl) (OpenGL geometry and shaders for it) ·
 [glitter-uikit](https://github.com/jlt-commons/glitter-uikit) (the same model, on native macOS AppKit) ·
 [raygui-jlt](https://github.com/jlt-commons/raygui-jlt) (immediate-mode GUI for Jolt) ·
-[raygui-jnk](https://github.com/burinc/raygui-jnk) (the same suite, for jank) ·
+[raygui-jnk](https://github.com/b12n-oss/raygui-jnk) (the same suite, for jank) ·
 [dartclojure.el](https://github.com/burinc/dartclojure.el)
 (Dart/Flutter → ClojureDart, in Emacs) · [viip](https://github.com/burinc/viip) ·
 [Clojars](https://clojars.org/users/agilecreativity) ·
@@ -459,6 +459,15 @@ twelve in between, then the last, the same trick as `i18n` and `k8s`.
 - [**docs-engine**](https://github.com/b12n-oss/docs-engine), a fork of the jlt-commons
   generator, so projects in this org publish through the same setup rather than a second
   one built from scratch.
+- [**raygui-jnk**](https://github.com/b12n-oss/raygui-jnk) and
+  [**raylib-jnk**](https://github.com/b12n-oss/raylib-jnk), the jank raygui and raylib
+  suites above, moved here from my personal account and off their standalone
+  `.b12n.app` domains. [Docs](https://b12n-oss.github.io/raygui-jnk/) and
+  [docs](https://b12n-oss.github.io/raylib-jnk/) now publish through this org's
+  docs-engine instead.
+- [**raylib-clj**](https://github.com/b12n-oss/raylib-clj), the JVM Clojure suite
+  above, moved here the same way. Its docs still publish at
+  [raylib-clj.b12n.app](https://raylib-clj.b12n.app/) for now.
 
 ### Upstream
 
