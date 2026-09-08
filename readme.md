@@ -55,7 +55,7 @@ engineering workflows. [Get in touch](https://linkedin.com/in/burinc).
 
 | Talk | Venue | Date |
 |---|---|---|
-| **Three native Clojures, one C game library**<br/><sub>Lightning talk to a room of typed-FP regulars (Haskell, OCaml, Rust), showing the same raylib examples running under three different Clojures: [Jolt](https://jlt-commons.github.io/raylib-jlt/) on Chez Scheme, [jank](https://b12n-oss.github.io/raylib-jnk/) via C++/LLVM, and [JVM Clojure](https://raylib-clj.b12n.app) over Panama. `bb run-all` kept a real window cycling through the gallery in the background for the whole talk. The question that came up: why write it in Jolt when Chez Scheme is right there? Because Jolt reads like Clojure (vectors, lists, sets, maps), so there was no learning curve to cross first.</sub> | FP-SYD<br/><sub>Microsoft, North Sydney</sub> | Aug 2026 |
+| **Three native Clojures, one C game library**<br/><sub>Lightning talk to a room of typed-FP regulars (Haskell, OCaml, Rust), showing the same raylib examples running under three different Clojures: [Jolt](https://jlt-commons.github.io/raylib-jlt/) on Chez Scheme, [jank](https://b12n-oss.github.io/raylib-jnk/) via C++/LLVM, and [JVM Clojure](https://b12n-oss.github.io/raylib-clj/) over Panama. `bb run-all` kept a real window cycling through the gallery in the background for the whole talk. The question that came up: why write it in Jolt when Chez Scheme is right there? Because Jolt reads like Clojure (vectors, lists, sets, maps), so there was no learning curve to cross first.</sub> | FP-SYD<br/><sub>Microsoft, North Sydney</sub> | Aug 2026 |
 | **[raylib, driven from Lisp](https://www.02ship.com/blog/02ship-sydney-meetup-august-11-recap)**<br/><sub>Open-mic demo of raylib (a C game library) driven from Lisp, across all three suites: [Jolt](https://github.com/jlt-commons/raylib-jlt) on Chez Scheme, [jank](https://github.com/b12n-oss/raylib-jnk) via C++/LLVM, and [JVM Clojure](https://github.com/b12n-oss/raylib-clj) over Panama, plus the screen-capture and UI-automation tooling built to record their demo GIFs instead of testing by hand. All three suites are open source now; the capture tooling is still unreleased.</sub> | 02Ship Sydney Meetup<br/><sub>Level 2, 63 Dixon St, Haymarket</sub> | Aug 2026 |
 | **[Three lenses, one mess: logic programming for the rest of us](https://www.linkedin.com/feed/update/urn:li:activity:7473516198232547329/)**<br/><sub>One RBAC authorization bug through three lenses, all in plain Clojure data: Prolog for role inheritance, Z3/SMT-LIB for conflicting constraints, a Mermaid-to-Prolog translation for reachability. Live REPL demo, closing on exposing solvers as LLM tools over MCP, where not hallucinating is the whole advantage. 📊 [Slides](https://github.com/burinc/burinc/blob/master/slides/three-lenses-one-mess.pdf)</sub> | FP-SYD<br/><sub>Microsoft, North Sydney</sub> | Jun 2026 |
 | **[Supercharging Lisp with AI: Rapid Feedback Loops with Clojure and Claude Code](https://luma.com/yt0jierk)**<br/><sub>Lightning talk to a room of 100+ builders. The demo ran on [ClojureDart](https://github.com/Tensegritics/ClojureDart), Clojure compiled to Dart on Flutter, with a live REPL plugged straight into the running widget tree. That's the loop that lets Claude Code edit, hot-reload and assert against live UI in milliseconds instead of minutes.</sub> | AI SYD<br/><sub>Vercel × Relevance AI, Surry Hills</sub> | Apr 2026 |
@@ -170,7 +170,7 @@ binary through C++/LLVM. The `shaders`, `textures`, `audio` and `text` categorie
 Clojure, over [coffi](https://github.com/IGJoshua/coffi) and JDK 22+'s Panama Foreign
 Function &amp; Memory API. 37 core, 28 shapes, 25 models, 9 games, plus audio, text,
 textures and shaders.
-📖 [Docs &amp; full gallery](https://raylib-clj.b12n.app/)
+📖 [Docs &amp; full gallery](https://b12n-oss.github.io/raylib-clj/)
 
 <table>
 <tr>
@@ -466,8 +466,9 @@ twelve in between, then the last, the same trick as `i18n` and `k8s`.
   [docs](https://b12n-oss.github.io/raylib-jnk/) now publish through this org's
   docs-engine instead.
 - [**raylib-clj**](https://github.com/b12n-oss/raylib-clj), the JVM Clojure suite
-  above, moved here the same way. Its docs still publish at
-  [raylib-clj.b12n.app](https://raylib-clj.b12n.app/) for now.
+  above, moved here the same way. Its docs moved off its own `raylib-clj.b12n.app`
+  domain too; [docs](https://b12n-oss.github.io/raylib-clj/) now publish through
+  this org's docs-engine.
 
 ### Upstream
 
