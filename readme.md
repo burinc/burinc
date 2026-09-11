@@ -475,19 +475,16 @@ twelve in between, then the last, the same trick as `i18n` and `k8s`.
   mcp-toolkit](https://github.com/metosin/mcp-toolkit), with the namespaces deliberately
   unchanged so it stays a drop-in. Runs on the JVM, on Node, and on Babashka.
   [Docs](https://b12n-oss.github.io/mcp-tkx/), EPL-2.0.
-- [**docs-engine**](https://github.com/b12n-oss/docs-engine), a fork of the jlt-commons
-  generator, so projects in this org publish through the same setup rather than a second
-  one built from scratch.
 - [**raygui-jnk**](https://github.com/b12n-oss/raygui-jnk) and
   [**raylib-jnk**](https://github.com/b12n-oss/raylib-jnk), the jank raygui and raylib
   suites above, moved here from my personal account and off their standalone
   `.b12n.app` domains. [Docs](https://b12n-oss.github.io/raygui-jnk/) and
-  [docs](https://b12n-oss.github.io/raylib-jnk/) now publish through this org's
-  docs-engine instead.
+  [docs](https://b12n-oss.github.io/raylib-jnk/) publish through
+  [jlt-commons/docs-engine](https://github.com/jlt-commons/docs-engine).
 - [**raylib-clj**](https://github.com/b12n-oss/raylib-clj), the JVM Clojure suite
   above, moved here the same way. Its docs moved off its own `raylib-clj.b12n.app`
-  domain too; [docs](https://b12n-oss.github.io/raylib-clj/) now publish through
-  this org's docs-engine.
+  domain too; [docs](https://b12n-oss.github.io/raylib-clj/) publish through
+  jlt-commons/docs-engine the same way.
 
 ### Upstream
 
