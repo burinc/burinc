@@ -378,6 +378,23 @@ can serve both the handshake era and the newer stateless one at once. Plenty of 
 is still private, so those patterns tend to surface in talks and articles before the code
 does.
 
+**Jolt goes serverless.** [**lambda-mvp-jlt**](https://github.com/b12n-oss/lambda-mvp-jlt) runs
+[Jolt](https://github.com/jolt-lang/jolt) as an AWS Lambda custom runtime, the same
+`provided.al2023` contract that [awslabs/aws-lambda-cpp](https://github.com/awslabs/aws-lambda-cpp)
+implements for C++. The loop itself is small: long-poll an invocation, run the handler, then
+POST the response back, and the whole thing comes out to about 60 lines of Clojure over Jolt's
+own HTTP client. `joltc build` compiles the handler and the runtime loop together into one
+`bootstrap` binary, and a `jolt bench` task compares cold and warm boot time across memory tiers
+against your own AWS account, because a number from someone else's account never tells you much.
+
+**And the CI half of that.** [**setup-jolt**](https://github.com/jlt-commons/setup-jolt) is the
+GitHub Action nobody had written yet: install jolt on a runner, whether that's Linux x86_64 or
+macOS x86_64 and arm64, straight from its prebuilt releases with the published sha256 checked.
+[DeLaGuardo/setup-clojure](https://github.com/DeLaGuardo/setup-clojure) already does the same job
+for babashka and the Clojure CLI, so this fills the gap it left. It grew out of lambda-mvp-jlt
+wanting its own CI to run through `jolt` instead of a separate babashka install, and it turned out
+useful enough on its own to split out as its own repo.
+
 **Public bits:** [mcp-tkx](https://github.com/b12n-oss/mcp-tkx) (MCP clients and servers,
 five protocol revisions) · [b12n-gamedev-course](https://github.com/burinc/b12n-gamedev-course) ·
 [raylib-jlt](https://github.com/jlt-commons/raylib-jlt) · [raylib-jnk](https://github.com/b12n-oss/raylib-jnk) · [raylib-clj](https://github.com/b12n-oss/raylib-clj) ·
@@ -386,6 +403,8 @@ five protocol revisions) · [b12n-gamedev-course](https://github.com/burinc/b12n
 [glitter-uikit](https://github.com/jlt-commons/glitter-uikit) (the same model, on native macOS AppKit) ·
 [raygui-jlt](https://github.com/jlt-commons/raygui-jlt) (immediate-mode GUI for Jolt) ·
 [raygui-jnk](https://github.com/b12n-oss/raygui-jnk) (the same suite, for jank) ·
+[lambda-mvp-jlt](https://github.com/b12n-oss/lambda-mvp-jlt) (AWS Lambda custom runtime for Jolt) ·
+[setup-jolt](https://github.com/jlt-commons/setup-jolt) (GitHub Action to install jolt) ·
 [dartclojure.el](https://github.com/burinc/dartclojure.el)
 (Dart/Flutter → ClojureDart, in Emacs) · [viip](https://github.com/burinc/viip) ·
 [Clojars](https://clojars.org/users/agilecreativity) ·
