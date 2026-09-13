@@ -404,6 +404,7 @@ five protocol revisions) · [b12n-gamedev-course](https://github.com/burinc/b12n
 [raygui-jlt](https://github.com/jlt-commons/raygui-jlt) (immediate-mode GUI for Jolt) ·
 [raygui-jnk](https://github.com/b12n-oss/raygui-jnk) (the same suite, for jank) ·
 [lambda-mvp-jlt](https://github.com/b12n-oss/lambda-mvp-jlt) (AWS Lambda custom runtime for Jolt) ·
+[lambda-mvp-bb](https://github.com/b12n-oss/lambda-mvp-bb) (the same MVP in Babashka, via blambda) ·
 [setup-jolt](https://github.com/jlt-commons/setup-jolt) (GitHub Action to install jolt) ·
 [dartclojure.el](https://github.com/burinc/dartclojure.el)
 (Dart/Flutter → ClojureDart, in Emacs) · [viip](https://github.com/burinc/viip) ·
