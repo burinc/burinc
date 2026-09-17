@@ -55,6 +55,7 @@ engineering workflows. [Get in touch](https://linkedin.com/in/burinc).
 
 | Talk | Venue | Date |
 |---|---|---|
+| **[Three native Clojures, one C game library](https://clj-aus.github.io/)**<br/><sub>The full hour version for clj-aus's first session: the same raylib comparison across [Jolt](https://jlt-commons.github.io/raylib-jlt/), [jank](https://b12n-oss.github.io/raylib-jnk/) and [JVM Clojure](https://b12n-oss.github.io/raylib-clj/), with live demos running the whole time and 20 minutes of questions after. Run online so anyone in the country could join, and the group's opening night drew a solid turnout.</sub> | clj-aus<br/><sub>Online, Australia-wide</sub> | Sep 2026 |
 | **Three native Clojures, one C game library**<br/><sub>Lightning talk to a room of typed-FP regulars (Haskell, OCaml, Rust), showing the same raylib examples running under three different Clojures: [Jolt](https://jlt-commons.github.io/raylib-jlt/) on Chez Scheme, [jank](https://b12n-oss.github.io/raylib-jnk/) via C++/LLVM, and [JVM Clojure](https://b12n-oss.github.io/raylib-clj/) over Panama. `bb run-all` kept a real window cycling through the gallery in the background for the whole talk. The question that came up: why write it in Jolt when Chez Scheme is right there? Because Jolt reads like Clojure (vectors, lists, sets, maps), so there was no learning curve to cross first.</sub> | FP-SYD<br/><sub>Microsoft, North Sydney</sub> | Aug 2026 |
 | **[raylib, driven from Lisp](https://www.02ship.com/blog/02ship-sydney-meetup-august-11-recap)**<br/><sub>Open-mic demo of raylib (a C game library) driven from Lisp, across all three suites: [Jolt](https://github.com/jlt-commons/raylib-jlt) on Chez Scheme, [jank](https://github.com/b12n-oss/raylib-jnk) via C++/LLVM, and [JVM Clojure](https://github.com/b12n-oss/raylib-clj) over Panama, plus the screen-capture and UI-automation tooling built to record their demo GIFs instead of testing by hand. All three suites are open source now; the capture tooling is still unreleased.</sub> | 02Ship Sydney Meetup<br/><sub>Level 2, 63 Dixon St, Haymarket</sub> | Aug 2026 |
 | **[Three lenses, one mess: logic programming for the rest of us](https://www.linkedin.com/feed/update/urn:li:activity:7473516198232547329/)**<br/><sub>One RBAC authorization bug through three lenses, all in plain Clojure data: Prolog for role inheritance, Z3/SMT-LIB for conflicting constraints, a Mermaid-to-Prolog translation for reachability. Live REPL demo, closing on exposing solvers as LLM tools over MCP, where not hallucinating is the whole advantage. 📊 [Slides](https://github.com/burinc/burinc/blob/master/slides/three-lenses-one-mess.pdf)</sub> | FP-SYD<br/><sub>Microsoft, North Sydney</sub> | Jun 2026 |
@@ -76,6 +77,11 @@ Flexiana, on Clojure, tooling, and building things in the open.
 I co-host **[Gen AI Enthusiasts (AI Users)](https://www.meetup.com/genai_enthusiasts_aiusers-online/)**,
 a 2,000+ member online generative-AI community running fortnightly sessions on prompt
 engineering, AI tooling and news, and practical LLM use.
+
+I also help run **[clj-aus](https://clj-aus.github.io/)**, Australia's Clojure meetup. It runs
+online so anyone in the country can join, and the first session (Sep 2026) opened with the
+raylib three-Clojures talk above. From session two on, every meetup carries a lightning-talk
+slot, open to first-time speakers too.
 
 ---
 
@@ -220,6 +226,11 @@ contradicted a correct reading of the source.
 </tr>
 </table>
 
+That Android sibling is real now too. [**raylib-android**](https://github.com/jlt-commons/raylib-android),
+ported by [yogthos](https://github.com/yogthos), runs the same scene contract as native arm64
+code with no JVM anywhere in the app. I wired up its docs-engine guide. It hasn't touched real
+hardware yet, so there are no screenshots to show for it.
+
 **Desktop GUI, the Replicant way.** [**glitter**](https://github.com/jlt-commons/glitter) is a
 GTK4 renderer for [Jolt](https://github.com/jolt-lang/jolt) that follows
 [Replicant](https://github.com/cjohansen/replicant)'s model rather than React's: one
@@ -342,6 +353,15 @@ than glitter itself gets, so Circle Drawer had nothing to port from and its mode
 > views, and a layer takes no part in hit-testing, which leaves a click free to reach the canvas
 > under a circle and keeps hit-testing a pure function over the model.
 
+**And in the terminal.** [**ftxui-jolt**](https://github.com/jlt-commons/ftxui-jolt) carries the
+same reagent-style idea into a text console, over [FTXUI](https://github.com/ArthurSonzogni/FTXUI),
+a C++ terminal UI library. Components are plain functions returning hiccup, and FTXUI's own
+component tree renders them, so its focus handling, mouse support and event loop all come along
+for free. FTXUI already rebuilds its whole tree from scratch on every frame, which is reagent's
+model already, so there's no reconciler to write on top of it. Canvas drawing, gradients,
+resizable splits and hoverable or floating windows are all in already.
+📖 [Repo](https://github.com/jlt-commons/ftxui-jolt)
+
 **And then teaching it.** [**b12n-gamedev-course**](https://github.com/burinc/b12n-gamedev-course)
 is what those 419 raylib examples were for: a free course that teaches Lisp and game
 programming as one thing, not "game dev, incidentally in Lisp." Six phases take you from
@@ -369,6 +389,16 @@ move under it.
 > CC BY-SA 4.0 and the code EPL-2.0, so teaching from it at a meetup or a classroom needs
 > nothing from me. Phases 0 to 3 stand on the three raylib suites today; the later phases
 > open up as the remaining sibling repos do.
+
+**A different kind of port.** [**ebb**](https://github.com/jlt-commons/ebb) carries
+[missionary](https://github.com/leonoel/missionary), a functional effect and streaming system,
+onto Jolt's Chez Scheme fibers rather than a C library. Every public var of missionary's API is
+supported: the three process primitives `sp`, `ap` and `cp`, the propagator and reactor, and
+every port and flow operator. The suite runs missionary's own tests almost unedited, 281 tests
+and 1187 assertions, 196 of them lifted straight from missionary's own suite, so passing them
+means missionary's actual guarantees hold on a different host.
+📖 [Docs & guide](https://jlt-commons.github.io/ebb/) ·
+[What differs from missionary](https://github.com/jlt-commons/ebb/blob/main/doc/conformance.md)
 
 **Clojure meets AI.** Agentic workflows, MCP servers, and LLM-driven developer tooling are
 where most of my time goes now. The first piece of that is out:
@@ -408,6 +438,8 @@ five protocol revisions) · [b12n-gamedev-course](https://github.com/burinc/b12n
 [lambda-mvp-cljs](https://github.com/b12n-oss/lambda-mvp-cljs) (the same MVP in ClojureScript, on nodejs24.x) ·
 [lambda-mvp-rst](https://github.com/b12n-oss/lambda-mvp-rst) (the same MVP in Jolt, its JSON built by real Rust via jolt-diplomat) ·
 [lambda-mvp-bb](https://github.com/b12n-oss/lambda-mvp-bb) (the same MVP in Babashka, via blambda) ·
+[ebb](https://github.com/jlt-commons/ebb) (missionary's effect and streaming system, ported to Jolt) ·
+[ftxui-jolt](https://github.com/jlt-commons/ftxui-jolt) (reagent-style terminal UI for Jolt) ·
 [setup-jolt](https://github.com/jlt-commons/setup-jolt) (GitHub Action to install jolt) ·
 [dartclojure.el](https://github.com/burinc/dartclojure.el)
 (Dart/Flutter → ClojureDart, in Emacs) · [viip](https://github.com/burinc/viip) ·
@@ -457,6 +489,16 @@ What is there so far:
   light or dark setting, without maintaining any of that itself.
 - [**meta**](https://github.com/jlt-commons/meta), the governance and the proposal
   queue, kept short enough that people will actually read it.
+- [**ebb**](https://github.com/jlt-commons/ebb), the missionary port above.
+  [Docs](https://jlt-commons.github.io/ebb/) publish through the org's own docs-engine.
+- [**ftxui-jolt**](https://github.com/jlt-commons/ftxui-jolt), the terminal UI library above.
+- [**awesome-jolt**](https://github.com/jlt-commons/awesome-jolt), the curated list for the
+  whole ecosystem: language and compiler, official libraries, community projects, tooling
+  and docs.
+- [**ci-builds**](https://github.com/jlt-commons/ci-builds), fleet CI that builds every
+  project against one jolt version and reports pass or fail in a single table. It exists
+  because jolt v0.8.0 once reversed an FFI function's argument order, and two projects
+  floating on `latest` broke silently.
 
 If you maintain something in Jolt and would rather it outlived your own free time, or
 you want to build something and would rather not do it alone, the
@@ -501,6 +543,11 @@ with a CI cross-smoke workflow behind it. It is the runtime under
 [raygui-jlt](https://github.com/jlt-commons/raygui-jlt), [glitter](https://github.com/jlt-commons/glitter)
 and [glitter-uikit](https://github.com/jlt-commons/glitter-uikit), so the patches tend to fall out of
 building on it.
+
+Also open: [bhauman/clojure-mcp-light#33](https://github.com/bhauman/clojure-mcp-light/pull/33)
+teaches its file-extension and nREPL-process detection to recognize `.jolt` files and jolt's own
+REPL, alongside a timbre config fix. clojure-mcp-light is where `clj-nrepl-eval` comes from, so
+once it lands, Jolt gets the same LLM-assisted REPL workflow Clojure already has.
 
 Longer-running: contributions to [babashka/process](https://github.com/babashka/process/commits?author=agilecreativity),
 [bhauman/clojure-mcp](https://github.com/bhauman/clojure-mcp/commits?author=burinc),
