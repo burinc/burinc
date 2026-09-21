@@ -231,6 +231,33 @@ runtime costs you.
 > and getting that wrong still compiles, still runs, and simply points Pac-Man's mouth a
 > quarter turn away from the direction he is walking.
 
+**Two more, and this time with numbers.** [**lisp-games**](https://github.com/b12n-oss/lisp-games)
+runs the same experiment on two smaller programs: borkdude's helitorus, which came out of
+the babashka/ffi examples, and raylib's own mesh-instancing demo. Neither game is mine.
+Each one is a port of somebody else's work, and the credit goes in the commit that adds
+the code rather than into a follow-up task.
+📖 [Docs &amp; guide](https://b12n-oss.github.io/lisp-games/)
+
+<table>
+<tr>
+<td align="center"><img src="https://raw.githubusercontent.com/b12n-oss/lisp-games/main/docs/demos/helitorus-babashka.gif" width="240" alt="helitorus running under babashka"><br><sub><code>babashka</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/b12n-oss/lisp-games/main/docs/demos/helitorus-clojure.gif" width="240" alt="helitorus running under JVM Clojure"><br><sub><code>clojure</code></sub></td>
+</tr>
+<tr>
+<td align="center"><img src="https://raw.githubusercontent.com/b12n-oss/lisp-games/main/docs/demos/helitorus-jank.gif" width="240" alt="helitorus running under jank"><br><sub><code>jank</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/b12n-oss/lisp-games/main/docs/demos/helitorus-jolt.gif" width="240" alt="helitorus running under Jolt"><br><sub><code>jolt</code></sub></td>
+</tr>
+</table>
+
+> Pac-Man compares what each FFI will carry across the boundary. helitorus compares what
+> it costs, because it rebuilds and projects the whole surface in Clojure every frame and
+> reports compute and draw milliseconds separately. At the default 260 rings all four hold
+> the same frame rate, since none of them is the bottleneck yet. Push to 900 and they
+> separate: Clojure at 2.4 ms of compute, jank at 4.3, Jolt at 5.0, babashka at 18.0. Two
+> of those numbers were badly wrong until an ordering that looked suspicious gave them
+> away, which is the half of benchmarking nobody writes up. mesh-instancing measures the
+> other axis, one draw call carrying two structs by value and a block of foreign memory.
+
 **And then on a phone.** [**raylib-ios**](https://github.com/jlt-commons/raylib-ios) puts
 raylib and SDL2 on a physical iPhone, driven from the same Jolt. Two things make it work
 and neither is obvious. raylib ships no iOS platform layer, so SDL2 compiled for iOS
