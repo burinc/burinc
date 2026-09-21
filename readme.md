@@ -613,6 +613,26 @@ the old subtree before it replaces one, and
 [jolt-lang/jolt-diplomat](https://github.com/jolt-lang/jolt-diplomat/pull/1) growing a JSON builder
 API in its `json_capi` example.
 
+Counting wider: across public repositories outside my own accounts and organizations,
+[@burinc](https://github.com/burinc) has 109 pull requests over 44 projects, 90 of them
+merged. The shape of that number is worth saying out loud rather than letting it stand on
+its own. 31 are the Clojure Civitas articles listed above, which land as pull requests to
+the site. Another 29 are the jolt-lang work, spread across eight of its repos. That leaves
+49 across 35 other projects, and those are the ones I would actually call upstream: nearly
+always a bug I hit while building something else, filed against the tool that hit it.
+[weavejester/cljfmt](https://github.com/weavejester/cljfmt),
+[clj-commons/antq](https://github.com/clj-commons/antq),
+[seancorfield/deps-new](https://github.com/seancorfield/deps-new),
+[djblue/portal](https://github.com/djblue/portal),
+[babashka/process](https://github.com/babashka/process),
+[babashka/pod-babashka-aws](https://github.com/babashka/pod-babashka-aws),
+[funcool/promesa](https://github.com/funcool/promesa),
+[lambdaisland/classpath](https://github.com/lambdaisland/classpath),
+[zero-one-group/geni](https://github.com/zero-one-group/geni),
+[jank-lang/jank](https://github.com/jank-lang/jank) and
+[raysan5/raylib](https://github.com/raysan5/raylib) are the names a Clojure reader is most
+likely to know. Two thirds of the 109 landed in 2025 and 2026.
+
 Also open: [bhauman/clojure-mcp-light#33](https://github.com/bhauman/clojure-mcp-light/pull/33)
 teaches its file-extension and nREPL-process detection to recognize `.jolt` files and jolt's own
 REPL, alongside a timbre config fix. clojure-mcp-light is where `clj-nrepl-eval` comes from, so
