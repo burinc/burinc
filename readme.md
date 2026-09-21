@@ -650,8 +650,9 @@ Longer-running: contributions to [babashka/process](https://github.com/babashka/
 and [others](https://github.com/agilecreativity).
 
 > 📌 **Two handles, one person.** [@agilecreativity](https://github.com/agilecreativity)
-> is my original account, from before I found Clojure, and a lot of my older OSS commits live
-> there. [@burinc](https://github.com/burinc) is where I work now.
+> is my original account, opened in 2013 and mostly Ruby until I found Clojure in early 2016.
+> Both eras live there, which is why the list above points at both handles.
+> [@burinc](https://github.com/burinc) is where I work now.
 
 ---
 
