@@ -591,14 +591,27 @@ twelve in between, then the last, the same trick as `i18n` and `k8s`.
 ### Upstream
 
 Most recent is [**jolt-lang/jolt**](https://github.com/jolt-lang/jolt/commits?author=burinc)
-itself, with 15 commits across July and August 2026 to the Clojure-on-Chez-Scheme host: `:string`
+itself, with 33 commits from July through September 2026 to the Clojure-on-Chez-Scheme host: `:string`
 carrying NULL in both directions through the FFI, fiber-parking for subprocess pipe I/O, and
 a cross-compilation path (`tarm64osx` → `ta6osx` via Chez xpatch, macOS → Linux via `zig cc`)
-with a CI cross-smoke workflow behind it. It is the runtime under
+with a CI cross-smoke workflow behind it. September went to the edges of the toolchain: shell
+completion for jolt's own commands and a project's tasks in zsh, bash and fish, a rolling nightly
+prerelease built from main, `jolt build --signable` for an executable that
+`codesign --verify --strict` will actually accept, and a dot-form fix so `(.-name target args)`
+dispatches as a method call rather than a field read. That last one needed a second patch from
+the maintainer for the runtime half, which is a fair description of how much of the compiler
+I still have to learn. It is the runtime under
 [raylib-jlt](https://github.com/jlt-commons/raylib-jlt),
 [raygui-jlt](https://github.com/jlt-commons/raygui-jlt), [glitter](https://github.com/jlt-commons/glitter)
 and [glitter-uikit](https://github.com/jlt-commons/glitter-uikit), so the patches tend to fall out of
 building on it.
+
+Building on it turns up patches next door too:
+[jolt-lang/xml](https://github.com/jolt-lang/xml/pull/2) declaring its `javax.xml.stream` shims
+under `:jolt/provides`, [jolt-lang/glimmer](https://github.com/jolt-lang/glimmer/pull/5) disposing
+the old subtree before it replaces one, and
+[jolt-lang/jolt-diplomat](https://github.com/jolt-lang/jolt-diplomat/pull/1) growing a JSON builder
+API in its `json_capi` example.
 
 Also open: [bhauman/clojure-mcp-light#33](https://github.com/bhauman/clojure-mcp-light/pull/33)
 teaches its file-extension and nREPL-process detection to recognize `.jolt` files and jolt's own
