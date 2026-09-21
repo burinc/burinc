@@ -202,6 +202,35 @@ textures and shaders.
 Three hosts, one C library: Chez Scheme, C++/LLVM, and the JVM. Reading the same example
 three ways is the clearest map I know of where each runtime puts the boundary.
 
+**The same game, four times.** [**raylib-pacman**](https://github.com/b12n-oss/raylib-pacman)
+takes that comparison down to a single program. Pac-Man, written out four times over, once
+per runtime, with babashka joining the three above. Same maze, same ghosts keeping their
+1980 personalities, same physics. Each copy is a standalone project and nothing is shared
+between them, which is the whole point. You can diff the four and see exactly what the
+runtime costs you.
+📖 [Docs &amp; guide](https://b12n-oss.github.io/raylib-pacman/)
+
+<table>
+<tr>
+<td align="center"><img src="https://raw.githubusercontent.com/b12n-oss/raylib-pacman/main/docs/demos/babashka-example.gif" width="240" alt="Pac-Man running under babashka"><br><sub><code>bb babashka</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/b12n-oss/raylib-pacman/main/docs/demos/clojure-example.gif" width="240" alt="Pac-Man running under JVM Clojure"><br><sub><code>bb clj</code></sub></td>
+</tr>
+<tr>
+<td align="center"><img src="https://raw.githubusercontent.com/b12n-oss/raylib-pacman/main/docs/demos/jank-example.gif" width="240" alt="Pac-Man running under jank"><br><sub><code>bb jank</code></sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/b12n-oss/raylib-pacman/main/docs/demos/jolt-example.gif" width="240" alt="Pac-Man running under Jolt"><br><sub><code>bb jolt</code></sub></td>
+</tr>
+</table>
+
+> The game itself barely moves between them. What changes is the drawing layer, and only
+> because each FFI carries a different amount across the boundary. A `Color` is four bytes
+> passed by value: coffi hands it over as a map, babashka and Jolt pack it into an integer
+> because their FFI moves scalars only, and jank will pass one quite happily but will not
+> let a function *return* one. `DrawCircleSector` takes its centre by value, so two of the
+> four cannot call it at all and build Pac-Man out of rlgl triangles instead. The trap
+> worth knowing: raylib measures a sector from 0 = right and the Jolt wrapper from 0 = up,
+> and getting that wrong still compiles, still runs, and simply points Pac-Man's mouth a
+> quarter turn away from the direction he is walking.
+
 **And then on a phone.** [**raylib-ios**](https://github.com/jlt-commons/raylib-ios) puts
 raylib and SDL2 on a physical iPhone, driven from the same Jolt. Two things make it work
 and neither is obvious. raylib ships no iOS platform layer, so SDL2 compiled for iOS
