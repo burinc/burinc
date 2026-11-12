@@ -18,6 +18,14 @@ on December 7, fresh off [Clojure/Conj 2026](https://2026.clojure-conj.org/speak
 generally available to talk about ClojureDart, MCP/agent tooling, and using LLMs in real
 engineering workflows. [Get in touch](https://linkedin.com/in/burinc).
 
+**At a glance**
+
+- ☕ **Java inside Jolt.** [champaca](https://github.com/b12n-oss/champaca) runs real Java libraries with no JVM in the process, and Spring Boot and Quarkus apps start on it.
+- 🎮 **513 raylib examples in three Clojures**, Jolt, jank and JVM Clojure, plus Pac-Man four ways and 137 scenes on an iPhone.
+- 🔧 **Upstream fixes** merged into [cisco/ChezScheme](https://github.com/cisco/ChezScheme/commits?author=burinc) and [atgreen/openldk](https://github.com/atgreen/openldk/commits?author=burinc), and 79 merged pull requests to [Jolt](https://github.com/jolt-lang/jolt/commits?author=burinc).
+- 🌱 **[jlt-commons](https://github.com/jlt-commons)**, the community home for Jolt libraries I started in August, now at 44 public repos.
+- 🇦🇺 **[clj-aus](https://clj-aus.github.io/)**, Australia's Clojure meetup. [Session two](https://www.meetup.com/clojure-australia/events/317297998/) is online on Tuesday 24 November.
+
 [![Website](https://img.shields.io/badge/blog-b12n.net-2e6176?style=flat-square)](https://b12n.net)
 [![Articles](https://img.shields.io/badge/Clojure_Civitas-11_articles-aadd52?style=flat-square)](https://clojurecivitas.org/Burin_Choomnuan.html)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-burinc-0a66c2?style=flat-square)](https://linkedin.com/in/burinc)
@@ -25,7 +33,18 @@ engineering workflows. [Get in touch](https://linkedin.com/in/burinc).
 
 ---
 
+
 ## 🎤 Speaking
+
+- 🔜 **[AI Engineer Sydney 2026](https://webdirections.org/ai-engineer/)** · Hilton Hotel, Sydney · Mon 7 Dec, 4:30 PM<br>
+  [209 ports in six days, in a language the model barely knew](https://webdirections.org/ai-engineer/speakers/burin-choomnuan/)
+- 📺 **[Clojure/Conj 2026](https://2026.clojure-conj.org/speakers)** · Charlotte, NC · Oct 2026<br>
+  Production ClojureDart for iOS, Android, and macOS. The recording is on its way.
+- 📺 **[Clojure/Conj 2025](https://www.youtube.com/watch?v=jWkEKdp0gqk)** · Charlotte, NC · Nov 2025<br>
+  From Scripts to Buy-In: How Small Clojure Wins Create Big Opportunities. [▶ Watch](https://www.youtube.com/watch?v=jWkEKdp0gqk)
+
+<details>
+<summary><b>The three abstracts</b></summary>
 
 ### 🔜 [AI Engineer Sydney 2026](https://webdirections.org/ai-engineer/) · Hilton Hotel, Sydney
 **[209 ports in six days, in a language the model barely knew](https://webdirections.org/ai-engineer/speakers/burin-choomnuan/)**
@@ -70,6 +89,11 @@ queue, so the link goes here once it's out.
 **[▶ Watch the talk](https://www.youtube.com/watch?v=jWkEKdp0gqk)** ·
 [📝 My recap from Charlotte](https://www.linkedin.com/feed/update/urn:li:activity:7395774856686030848/)
 
+</details>
+
+<details>
+<summary><b>Eleven meetup talks, 2024 to 2026</b></summary>
+
 ### Meetups
 
 | Talk | Venue | Date |
@@ -85,6 +109,13 @@ queue, so the link goes here once it's out.
 | **[Java/Spring Boot Troubleshooting on Steroids with Clojure REPL](https://github.com/SydneyJavaMeetup/meetup-22-spring-ai-debugging)**<br/><sub>Debugging Spring Boot from a Clojure REPL, set directly against traditional remote debugging in IntelliJ. Live coding on a sample app: debug, explore and modify at runtime with no restart and no redeploy.</sub> | Sydney Java Meetup #22<br/><sub>Infomedia, Sydney</sub> | Mar 2025 |
 | **Bridging Two Worlds: Leveraging Lisp-like Tools to Work with Python**<br/><sub>Scripting, extending and manipulating Python from Clojure with Basilisp and libpython-clj.</sub> | SYDJANGO | Dec 2024 |
 | **Overview of Clojure for FP**<br/><sub>Live demos: libpython-clj via OpenCV, GraalVM via Babashka, AWS automation with the Cognitect AWS library, `whisper.clj` transcription, plus Rama and Jank.</sub> | FP-SYD | Aug 2024 |
+
+</details>
+
+**Interview:** [Clojure Corner](https://youtu.be/bQSQua46cdc) with Flexiana. **Community:** I co-host [Gen AI Enthusiasts](https://www.meetup.com/genai_enthusiasts_aiusers-online/), 2,000+ members online, and help run [clj-aus](https://clj-aus.github.io/).
+
+<details>
+<summary><b>More on the interview and the two communities</b></summary>
 
 ### 🎙️ Interview
 
@@ -106,6 +137,8 @@ three-Clojures talk above.
 then Clojure running on a Nintendo Wii, with four games played live. Every session from this
 one on carries a lightning-talk slot, and first-time speakers get priority.
 
+</details>
+
 ---
 
 ## ✍️ Writing
@@ -118,6 +151,12 @@ I write at **[Clojure Civitas](https://clojurecivitas.org/Burin_Choomnuan.html)*
 | [Making Fun Games with Clojure + Raylib](https://clojurecivitas.org/scicloj/clojure_jam/proposal/games_with_clojure.html) | Feb 2026 |
 | [Clojure Conj 2025: Two Lies and a Truth Trivia](https://clojurecivitas.org/scittle/conj_2025/trivia_slideshow.html) | Nov 2025 |
 | [Browser-Native PDF Viewer with ClojureScript & Scittle](https://clojurecivitas.org/scittle/pdf/pdf_viewer.html) | Nov 2025 |
+
+<details>
+<summary><b>Eight more articles</b></summary>
+
+| Article | Date |
+|---|---|
 | [Web Audio API Playground with ClojureScript & Scittle](https://clojurecivitas.org/scittle/audio/audio_playground.html) | Nov 2025 |
 | [Build Galaga with ClojureScript & Scittle](https://clojurecivitas.org/scittle/games/galaga.html) | Nov 2025 |
 | [Build Asteroids with ClojureScript & Scittle](https://clojurecivitas.org/scittle/games/asteroids_article.html) | Nov 2025 |
@@ -126,6 +165,8 @@ I write at **[Clojure Civitas](https://clojurecivitas.org/Burin_Choomnuan.html)*
 | [Free Weather Data with the National Weather Service API](https://clojurecivitas.org/scittle/weather/weather_nws_integration.html) | Nov 2025 |
 | [Python + ClojureScript: Pyodide Integration with Scittle](https://clojurecivitas.org/scittle/pyodide/pyodide_integration.html) | Nov 2025 |
 | [Building Browser-Native Presentations with Scittle](https://clojurecivitas.org/scittle/presentations/browser_native_slides.html) | Nov 2025 |
+
+</details>
 
 Plus **[b12n.net](https://b12n.net)** ("Lisp's Revenge"), my own blog, built with
 Clojure/Cryogen, where I keep browser-native slide decks:
@@ -136,13 +177,68 @@ Clojure/Cryogen, where I keep browser-native slide decks:
 
 ## 🛠️ What I build
 
+<table>
+<tr>
+<td align="center"><img src="https://raw.githubusercontent.com/b12n-oss/raylib-jank-demo/main/docs/demos/basic-pbr.gif" width="180" alt="Physically based rendering in jank"><br><sub>raylib in jank</sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/jlt-commons/raylib-ios/main/docs/images/kaleidoscope.gif" width="180" alt="Kaleidoscope on an iPhone"><br><sub>Jolt on an iPhone</sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/jlt-commons/glitter/main/docs/demos/todo.gif" width="180" alt="glitter todo board"><br><sub>glitter, GTK4</sub></td>
+<td align="center"><img src="https://raw.githubusercontent.com/b12n-oss/raylib-pacman/main/docs/demos/jolt-example.gif" width="180" alt="Pac-Man in Jolt"><br><sub>Pac-Man in Jolt</sub></td>
+</tr>
+</table>
+
 **ClojureDart in production.** More than a dozen apps for iOS, Android and macOS in the
 past year: on-device OpenCV document scanning, realtime GTFS transit tracking, on-device
 LLM evaluation and sentence embeddings, charting, marketplaces. Most deployed internally,
 several bound for the app stores. That's the
 [Conj 2026 talk](https://2026.clojure-conj.org/speakers).
 
-**Lisp against the C ABI.** Three suites of [raylib](https://www.raylib.com/) demos written
+**Clojure meets AI.** Agentic workflows, MCP servers, and LLM-driven developer tooling are
+where most of my time goes now. The first piece of that is out:
+[**mcp-tkx**](https://github.com/b12n-oss/mcp-tkx) builds Model Context Protocol clients
+and servers in Clojure and ClojureScript, across five protocol revisions, and one session
+can serve both the handshake era and the newer stateless one at once. Plenty of the rest
+is still private, so those patterns tend to surface in talks and articles before the code
+does.
+
+Each of the projects below opens with a click.
+
+<details>
+<summary><b>Java, with no JVM in the process.</b> champaca, a Java runtime inside Jolt</summary>
+
+[**champaca**](https://github.com/b12n-oss/champaca) is
+the newest thing here and by some distance the biggest, at close to 600 commits since it went
+up in mid-October. It's a Java runtime that lives inside Jolt, rebuilt from Anthony Green's
+[OpenLDK](https://github.com/atgreen/openldk), a Java runtime for Common Lisp. The first time a
+method gets called, a translator written in Jolt's Clojure turns its bytecode into Chez Scheme
+source, and Chez compiles that to native code. Java objects end up as Chez records in Jolt's own
+heap, so calling a Java library from Jolt is an ordinary procedure call with no second runtime
+to talk to.
+
+The classes are the JDK's own, read out of `$JAVA_HOME/lib/modules`, and the JDK boots the way
+it does on a JVM, module system and all. Thirteen common libraries give the same output they
+give on HotSpot, Guava, Jackson, jsoup, H2 and Byte Buddy among them, and Spring Boot 4.1.2 and
+Quarkus 3.40.1 applications start. A warm `Hello` takes 0.39 s from exec to exit on an M1 Pro,
+against 4.3 s for the first run, because a startup cache keeps whatever the earlier run
+compiled. It's experimental and says so at the top of its README. A program can still reach a
+JDK native nobody has written yet, JNI libraries aren't there, and a warm start still costs a
+few times HotSpot's time and memory.
+📖 [Docs & guide](https://b12n-oss.github.io/champaca/) ·
+[Limitations](https://github.com/b12n-oss/champaca/blob/main/docs/guide/limitations.md)
+
+> It got here by way of a first attempt.
+> [**jolt-openldk**](https://github.com/jlt-commons/jolt-openldk) loads SBCL into the Jolt
+> process as a shared library, starts it on a core with OpenLDK already warmed up, and calls
+> across through a small C shim. That works, and it's still alpha. But it meant two Lisp runtimes
+> sharing one process, and champaca is what happens when you take the translator idea and make
+> Chez the only one. Both of them kept running into bugs in OpenLDK itself, and the fixes went
+> back upstream, which the Upstream section below has more on.
+
+</details>
+
+<details>
+<summary><b>Lisp against the C ABI.</b> 513 raylib examples in Jolt, jank and JVM Clojure</summary>
+
+Three suites of [raylib](https://www.raylib.com/) demos written
 in three different Clojures, each one reaching the same C game library the way its own host
 actually allows.
 
@@ -233,7 +329,12 @@ textures and shaders.
 Three hosts, one C library: Chez Scheme, C++/LLVM, and the JVM. Reading the same example
 three ways is the clearest map I know of where each runtime puts the boundary.
 
-**The same game, four times.** [**raylib-pacman**](https://github.com/b12n-oss/raylib-pacman)
+</details>
+
+<details>
+<summary><b>The same game, four times.</b> Pac-Man in babashka, JVM Clojure, jank and Jolt</summary>
+
+[**raylib-pacman**](https://github.com/b12n-oss/raylib-pacman)
 takes that comparison down to a single program. Pac-Man, written out four times over, once
 per runtime, with babashka joining the three above. Same maze, same ghosts keeping their
 1980 personalities, same physics. Each copy is a standalone project and nothing is shared
@@ -262,7 +363,12 @@ runtime costs you.
 > and getting that wrong still compiles, still runs, and simply points Pac-Man's mouth a
 > quarter turn away from the direction he is walking.
 
-**Two more, and this time with numbers.** [**lisp-games**](https://github.com/b12n-oss/lisp-games)
+</details>
+
+<details>
+<summary><b>Two more, and this time with numbers.</b> lisp-games, timed across the same four runtimes</summary>
+
+[**lisp-games**](https://github.com/b12n-oss/lisp-games)
 runs the same experiment on two smaller programs: borkdude's helitorus, which came out of
 the babashka/ffi examples, and raylib's own mesh-instancing demo. Neither game is mine.
 Each one is a port of somebody else's work, and the credit goes in the commit that adds
@@ -289,7 +395,12 @@ the code rather than into a follow-up task.
 > away, which is the half of benchmarking nobody writes up. mesh-instancing measures the
 > other axis, one draw call carrying two structs by value and a block of foreign memory.
 
-**And then on a phone.** [**raylib-ios**](https://github.com/jlt-commons/raylib-ios) puts
+</details>
+
+<details>
+<summary><b>And then on a phone.</b> raylib on a physical iPhone, 137 scenes, no JIT</summary>
+
+[**raylib-ios**](https://github.com/jlt-commons/raylib-ios) puts
 raylib and SDL2 on a physical iPhone, driven from the same Jolt. Two things make it work
 and neither is obvious. raylib ships no iOS platform layer, so SDL2 compiled for iOS
 becomes one, and both link into the executable as static archives. iOS forbids generating
@@ -324,7 +435,12 @@ ported by [yogthos](https://github.com/yogthos), runs the same scene contract as
 code with no JVM anywhere in the app. I wired up its docs-engine guide. It hasn't touched real
 hardware yet, so there are no screenshots to show for it.
 
-**Desktop GUI, the Replicant way.** [**glitter**](https://github.com/jlt-commons/glitter) is a
+</details>
+
+<details>
+<summary><b>Desktop GUI, the Replicant way.</b> glitter, a GTK4 renderer for Jolt</summary>
+
+[**glitter**](https://github.com/jlt-commons/glitter) is a
 GTK4 renderer for [Jolt](https://github.com/jolt-lang/jolt) that follows
 [Replicant](https://github.com/cjohansen/replicant)'s model rather than React's: one
 application-state atom, a pure `state -> hiccup` view function, top-down re-render on every
@@ -346,7 +462,12 @@ plus four [7GUIs](https://eugenkiss.github.io/7guis/tasks/) tasks.
 </tr>
 </table>
 
-**Immediate-mode GUI, the other shape.** [**raygui-jlt**](https://github.com/jlt-commons/raygui-jlt)
+</details>
+
+<details>
+<summary><b>Immediate-mode GUI, the other shape.</b> raygui-jlt, 24 examples</summary>
+
+[**raygui-jlt**](https://github.com/jlt-commons/raygui-jlt)
 is glitter's opposite number: no retained widget tree at all, just
 [raygui](https://github.com/raysan5/raygui), raylib's companion GUI library, called
 straight over its C ABI through `jolt.ffi`, one shared bindings namespace under a suite of
@@ -377,7 +498,12 @@ collections, containers, dialogs, color and styling), each with a committed scre
 > a buffer of its own. Screenshots rather than GIFs here, deliberately: synthetic clicks do
 > not actuate a raylib window at all, so a recording could never show a button being pressed.
 
-**The same suite, a different Clojure.** [**raygui-jnk**](https://github.com/b12n-oss/raygui-jnk)
+</details>
+
+<details>
+<summary><b>The same suite, a different Clojure.</b> raygui-jnk, the jank twin</summary>
+
+[**raygui-jnk**](https://github.com/b12n-oss/raygui-jnk)
 is raygui-jlt's twin in [jank](https://jank-lang.org), which compiles Clojure through C++ and
 LLVM rather than Chez Scheme. Same 24 examples, same names, same descriptions, so the two ports
 read as one library seen through two implementations. What differs sits underneath: jank reaches
@@ -410,7 +536,12 @@ vendored copy and no build script of your own.
 > make unnecessary, since each one carries its own embedded font. The six examples above are
 > deliberately different ones from raygui-jlt's, so between the two sections all 7 groups show.
 
-**The same model, on native macOS.** [**glitter-uikit**](https://github.com/jlt-commons/glitter-uikit)
+</details>
+
+<details>
+<summary><b>The same model, on native macOS.</b> glitter-uikit, over AppKit</summary>
+
+[**glitter-uikit**](https://github.com/jlt-commons/glitter-uikit)
 keeps glitter's model exactly as it is and swaps the toolkit underneath it: one
 application-state atom, a pure `state -> hiccup` view, handlers as data, but every widget is a
 real AppKit `NSView` rather than a GTK one. It began as a port of
@@ -446,7 +577,12 @@ than glitter itself gets, so Circle Drawer had nothing to port from and its mode
 > views, and a layer takes no part in hit-testing, which leaves a click free to reach the canvas
 > under a circle and keeps hit-testing a pure function over the model.
 
-**And in the terminal.** [**ftxui-jolt**](https://github.com/jlt-commons/ftxui-jolt) carries the
+</details>
+
+<details>
+<summary><b>And in the terminal.</b> ftxui-jolt, over FTXUI</summary>
+
+[**ftxui-jolt**](https://github.com/jlt-commons/ftxui-jolt) carries the
 same reagent-style idea into a text console, over [FTXUI](https://github.com/ArthurSonzogni/FTXUI),
 a C++ terminal UI library. Components are plain functions returning hiccup, and FTXUI's own
 component tree renders them, so its focus handling, mouse support and event loop all come along
@@ -455,7 +591,12 @@ model already, so there's no reconciler to write on top of it. Canvas drawing, g
 resizable splits and hoverable or floating windows are all in already.
 📖 [Repo](https://github.com/jlt-commons/ftxui-jolt)
 
-**And then teaching it.** [**b12n-gamedev-course**](https://github.com/burinc/b12n-gamedev-course)
+</details>
+
+<details>
+<summary><b>And then teaching it.</b> a free course in Lisp and game programming</summary>
+
+[**b12n-gamedev-course**](https://github.com/burinc/b12n-gamedev-course)
 is what those 513 raylib examples were for: a free course that teaches Lisp and game
 programming as one thing, not "game dev, incidentally in Lisp." Six phases take you from
 never having written a line of Lisp to a capstone, and every lesson builds a real, playable
@@ -483,42 +624,24 @@ move under it.
 > nothing from me. Phases 0 to 3 stand on the three raylib suites today; the later phases
 > open up as the remaining sibling repos do.
 
-**Java, with no JVM in the process.** [**champaca**](https://github.com/b12n-oss/champaca) is
-the newest thing here and by some distance the biggest, at close to 600 commits since it went
-up in mid-October. It's a Java runtime that lives inside Jolt, rebuilt from Anthony Green's
-[OpenLDK](https://github.com/atgreen/openldk), a Java runtime for Common Lisp. The first time a
-method gets called, a translator written in Jolt's Clojure turns its bytecode into Chez Scheme
-source, and Chez compiles that to native code. Java objects end up as Chez records in Jolt's own
-heap, so calling a Java library from Jolt is an ordinary procedure call with no second runtime
-to talk to.
+</details>
 
-The classes are the JDK's own, read out of `$JAVA_HOME/lib/modules`, and the JDK boots the way
-it does on a JVM, module system and all. Thirteen common libraries give the same output they
-give on HotSpot, Guava, Jackson, jsoup, H2 and Byte Buddy among them, and Spring Boot 4.1.2 and
-Quarkus 3.40.1 applications start. A warm `Hello` takes 0.39 s from exec to exit on an M1 Pro,
-against 4.3 s for the first run, because a startup cache keeps whatever the earlier run
-compiled. It's experimental and says so at the top of its README. A program can still reach a
-JDK native nobody has written yet, JNI libraries aren't there, and a warm start still costs a
-few times HotSpot's time and memory.
-📖 [Docs & guide](https://b12n-oss.github.io/champaca/) ·
-[Limitations](https://github.com/b12n-oss/champaca/blob/main/docs/guide/limitations.md)
+<details>
+<summary><b>The AWS SDK, unmodified.</b> aws-api-jolt</summary>
 
-> It got here by way of a first attempt.
-> [**jolt-openldk**](https://github.com/jlt-commons/jolt-openldk) loads SBCL into the Jolt
-> process as a shared library, starts it on a core with OpenLDK already warmed up, and calls
-> across through a small C shim. That works, and it's still alpha. But it meant two Lisp runtimes
-> sharing one process, and champaca is what happens when you take the translator idea and make
-> Chez the only one. Both of them kept running into bugs in OpenLDK itself, and the fixes went
-> back upstream, which the Upstream section below has more on.
-
-**The AWS SDK, unmodified.** [**aws-api-jolt**](https://github.com/jlt-commons/aws-api-jolt) runs
+[**aws-api-jolt**](https://github.com/jlt-commons/aws-api-jolt) runs
 the stock Maven release of [cognitect-labs/aws-api](https://github.com/cognitect-labs/aws-api) on
 Jolt without forking or patching it. The library supplies the two things Jolt is missing, an HTTP
 client and a host-class declaration, and nothing more. Its README is mostly the traps: which
 aws-api versions fail on Jolt and why, measured against S3 on a live account, and the one
 `tools.logging` placement that makes nine aws-api namespaces blame each other.
 
-**A different kind of port.** [**ebb**](https://github.com/jlt-commons/ebb) carries
+</details>
+
+<details>
+<summary><b>A different kind of port.</b> ebb, missionary on Jolt's fibers</summary>
+
+[**ebb**](https://github.com/jlt-commons/ebb) carries
 [missionary](https://github.com/leonoel/missionary), a functional effect and streaming system,
 onto Jolt's Chez Scheme fibers rather than a C library. Every public var of missionary's API is
 supported: the three process primitives `sp`, `ap` and `cp`, the propagator and reactor, and
@@ -528,15 +651,12 @@ means missionary's actual guarantees hold on a different host.
 📖 [Docs & guide](https://jlt-commons.github.io/ebb/) ·
 [What differs from missionary](https://github.com/jlt-commons/ebb/blob/main/doc/conformance.md)
 
-**Clojure meets AI.** Agentic workflows, MCP servers, and LLM-driven developer tooling are
-where most of my time goes now. The first piece of that is out:
-[**mcp-tkx**](https://github.com/b12n-oss/mcp-tkx) builds Model Context Protocol clients
-and servers in Clojure and ClojureScript, across five protocol revisions, and one session
-can serve both the handshake era and the newer stateless one at once. Plenty of the rest
-is still private, so those patterns tend to surface in talks and articles before the code
-does.
+</details>
 
-**Jolt goes serverless.** [**lambda-mvp-jlt**](https://github.com/b12n-oss/lambda-mvp-jlt) runs
+<details>
+<summary><b>Jolt goes serverless.</b> an AWS Lambda custom runtime</summary>
+
+[**lambda-mvp-jlt**](https://github.com/b12n-oss/lambda-mvp-jlt) runs
 [Jolt](https://github.com/jolt-lang/jolt) as an AWS Lambda custom runtime, the same
 `provided.al2023` contract that [awslabs/aws-lambda-cpp](https://github.com/awslabs/aws-lambda-cpp)
 implements for C++. The loop itself is small: long-poll an invocation, run the handler, then
@@ -545,7 +665,12 @@ own HTTP client. `joltc build` compiles the handler and the runtime loop togethe
 `bootstrap` binary, and a `jolt bench` task compares cold and warm boot time across memory tiers
 against your own AWS account, because a number from someone else's account never tells you much.
 
-**And the CI half of that.** [**setup-jolt**](https://github.com/jlt-commons/setup-jolt) is the
+</details>
+
+<details>
+<summary><b>And the CI half of that.</b> setup-jolt, a GitHub Action</summary>
+
+[**setup-jolt**](https://github.com/jlt-commons/setup-jolt) is the
 GitHub Action nobody had written yet: install jolt on a runner, whether that's Linux x86_64 or
 macOS x86_64 and arm64, straight from its prebuilt releases with the published sha256 checked.
 [DeLaGuardo/setup-clojure](https://github.com/DeLaGuardo/setup-clojure) already does the same job
@@ -553,7 +678,12 @@ for babashka and the Clojure CLI, so this fills the gap it left. It grew out of 
 wanting its own CI to run through `jolt` instead of a separate babashka install, and it turned out
 useful enough on its own to split out as its own repo.
 
-**Public bits:** [champaca](https://github.com/b12n-oss/champaca) (a Java runtime inside Jolt) ·
+</details>
+
+<details>
+<summary><b>Every public repo, in one list</b></summary>
+
+[champaca](https://github.com/b12n-oss/champaca) (a Java runtime inside Jolt) ·
 [jolt-openldk](https://github.com/jlt-commons/jolt-openldk) (Java libraries from Jolt through OpenLDK on SBCL) ·
 [aws-api-jolt](https://github.com/jlt-commons/aws-api-jolt) (cognitect aws-api on Jolt, no fork) ·
 [mcp-tkx](https://github.com/b12n-oss/mcp-tkx) (MCP clients and servers,
@@ -583,6 +713,8 @@ five protocol revisions) · [b12n-gamedev-course](https://github.com/burinc/b12n
 [Clojars](https://clojars.org/users/agilecreativity) ·
 [RubyGems](https://rubygems.org/profiles/agilecreativity)
 
+</details>
+
 ---
 
 ## 🌱 Open source
@@ -591,6 +723,10 @@ five protocol revisions) · [b12n-gamedev-course](https://github.com/burinc/b12n
 
 I started [**jlt-commons**](https://github.com/jlt-commons) in August 2026, a
 community-led home for [Jolt](https://github.com/jolt-lang/jolt) libraries and tooling.
+
+<details>
+<summary><b>Why it exists, how projects join, and what's there so far</b></summary>
+
 Jolt is young, so most of its ecosystem is still one person's side project, and a side
 project stops the month its author gets busy. The org gives that work somewhere to land,
 and gives anyone who wants to help a place to do it that is not someone else's personal
@@ -664,9 +800,16 @@ If you maintain something in Jolt and would rather it outlived your own free tim
 you want to build something and would rather not do it alone, the
 [proposal queue](https://github.com/jlt-commons/meta) is open.
 
+</details>
+
 ### b12n-oss
 
-[**b12n-oss**](https://github.com/b12n-oss) is where my own open source lands. It is a
+[**b12n-oss**](https://github.com/b12n-oss) is where my own open source lands.
+
+<details>
+<summary><b>The name, the repos, and why only public ones show</b></summary>
+
+It is a
 different thing from jlt-commons above, which is community-led and specific to Jolt. This
 one is just mine, and the name is a numeronym for `burinchoomnuan`: the first letter, the
 twelve in between, then the last, the same trick as `i18n` and `k8s`.
@@ -702,7 +845,14 @@ twelve in between, then the last, the same trick as `i18n` and `k8s`.
 Only the public repos show up on this page. A fair number are still private while they get
 to a state worth showing, so the list grows as they do.
 
+</details>
+
 ### Upstream
+
+Two fixes merged into [cisco/ChezScheme](https://github.com/cisco/ChezScheme/commits?author=burinc), the Scheme that Jolt compiles to, and seven into [atgreen/openldk](https://github.com/atgreen/openldk/commits?author=burinc). In [Jolt](https://github.com/jolt-lang/jolt/commits?author=burinc) itself, 137 commits since July and 79 merged pull requests. Counting wider, 197 pull requests over 52 projects, 170 of them merged.
+
+<details>
+<summary><b>What each fix was, project by project</b></summary>
 
 The furthest down the stack I've gone is [**cisco/ChezScheme**](https://github.com/cisco/ChezScheme/commits?author=burinc),
 the Scheme that Jolt compiles to. Matthew Flatt merged two of my pull requests there, and
@@ -789,6 +939,8 @@ Longer-running: contributions to [babashka/process](https://github.com/babashka/
 [juxt/mach](https://github.com/juxt/mach/commits?author=agilecreativity),
 [apache/incubator-mxnet](https://github.com/apache/incubator-mxnet/commits?author=agilecreativity),
 and [others](https://github.com/agilecreativity).
+
+</details>
 
 > 📌 **Two handles, one person.** [@agilecreativity](https://github.com/agilecreativity)
 > is my original account, opened in 2013 and mostly Ruby until I found Clojure in early 2016.
