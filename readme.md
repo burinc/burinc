@@ -582,20 +582,6 @@ than glitter itself gets, so Circle Drawer had nothing to port from and its mode
 </details>
 
 <details>
-<summary><b>And in the terminal.</b> ftxui-jolt, over FTXUI</summary>
-
-[**ftxui-jolt**](https://github.com/jlt-commons/ftxui-jolt) carries the
-same reagent-style idea into a text console, over [FTXUI](https://github.com/ArthurSonzogni/FTXUI),
-a C++ terminal UI library. Components are plain functions returning hiccup, and FTXUI's own
-component tree renders them, so its focus handling, mouse support and event loop all come along
-for free. FTXUI already rebuilds its whole tree from scratch on every frame, which is reagent's
-model already, so there's no reconciler to write on top of it. Canvas drawing, gradients,
-resizable splits and hoverable or floating windows are all in already.
-📖 [Repo](https://github.com/jlt-commons/ftxui-jolt)
-
-</details>
-
-<details>
 <summary><b>And then teaching it.</b> a free course in Lisp and game programming</summary>
 
 [**b12n-gamedev-course**](https://github.com/burinc/b12n-gamedev-course)
@@ -637,21 +623,6 @@ Jolt without forking or patching it. The library supplies the two things Jolt is
 client and a host-class declaration, and nothing more. Its README is mostly the traps: which
 aws-api versions fail on Jolt and why, measured against S3 on a live account, and the one
 `tools.logging` placement that makes nine aws-api namespaces blame each other.
-
-</details>
-
-<details>
-<summary><b>A different kind of port.</b> ebb, missionary on Jolt's fibers</summary>
-
-[**ebb**](https://github.com/jlt-commons/ebb) carries
-[missionary](https://github.com/leonoel/missionary), a functional effect and streaming system,
-onto Jolt's Chez Scheme fibers rather than a C library. Every public var of missionary's API is
-supported: the three process primitives `sp`, `ap` and `cp`, the propagator and reactor, and
-every port and flow operator. The suite runs missionary's own tests almost unedited, 281 tests
-and 1187 assertions, 196 of them lifted straight from missionary's own suite, so passing them
-means missionary's actual guarantees hold on a different host.
-📖 [Docs & guide](https://jlt-commons.github.io/ebb/) ·
-[What differs from missionary](https://github.com/jlt-commons/ebb/blob/main/doc/conformance.md)
 
 </details>
 
@@ -707,8 +678,6 @@ five protocol revisions) · [b12n-gamedev-course](https://github.com/burinc/b12n
 [lambda-mvp-cljs](https://github.com/b12n-oss/lambda-mvp-cljs) (the same MVP in ClojureScript, on nodejs24.x) ·
 [lambda-mvp-rst](https://github.com/b12n-oss/lambda-mvp-rst) (the same MVP in Jolt, its JSON built by real Rust via jolt-diplomat) ·
 [lambda-mvp-bb](https://github.com/b12n-oss/lambda-mvp-bb) (the same MVP in Babashka, via blambda) ·
-[ebb](https://github.com/jlt-commons/ebb) (missionary's effect and streaming system, ported to Jolt) ·
-[ftxui-jolt](https://github.com/jlt-commons/ftxui-jolt) (reagent-style terminal UI for Jolt) ·
 [setup-jolt](https://github.com/jlt-commons/setup-jolt) (GitHub Action to install jolt) ·
 [dartclojure.el](https://github.com/burinc/dartclojure.el)
 (Dart/Flutter → ClojureDart, in Emacs) · [viip](https://github.com/burinc/viip) ·
@@ -764,9 +733,6 @@ What is there so far:
   light or dark setting, without maintaining any of that itself.
 - [**meta**](https://github.com/jlt-commons/meta), the governance and the proposal
   queue, kept short enough that people will actually read it.
-- [**ebb**](https://github.com/jlt-commons/ebb), the missionary port above.
-  [Docs](https://jlt-commons.github.io/ebb/) publish through the org's own docs-engine.
-- [**ftxui-jolt**](https://github.com/jlt-commons/ftxui-jolt), the terminal UI library above.
 - [**awesome-jolt**](https://github.com/jlt-commons/awesome-jolt), the curated list for the
   whole ecosystem: language and compiler, official libraries, community projects, tooling
   and docs.
@@ -788,8 +754,10 @@ What is there so far:
   converter, and another converts against live ECB rates.
 
 The org isn't mostly mine anymore, and that was the point of starting it. It's at 44
-public repos now. [yogthos](https://github.com/yogthos) has brought in more than I have
-lately: [writ](https://github.com/jlt-commons/writ), a DSL that blocks AI mistakes through
+public repos now. [yogthos](https://github.com/yogthos) has brought in more than I have:
+[ebb](https://github.com/jlt-commons/ebb), his port of missionary that I've contributed to,
+[ftxui-jolt](https://github.com/jlt-commons/ftxui-jolt) for terminal UIs over FTXUI,
+[writ](https://github.com/jlt-commons/writ), a DSL that blocks AI mistakes through
 proof, then [ensemble](https://github.com/jlt-commons/ensemble) for Erlang-style actors,
 [slipstream](https://github.com/jlt-commons/slipstream) for GPU vector rendering,
 [jolt-lsp](https://github.com/jlt-commons/jolt-lsp),
