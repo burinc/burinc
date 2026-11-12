@@ -3,14 +3,16 @@
 **Senior Principal Engineer at NewsCorp Australia: ClojureDart, AI, full-stack.**
 
 Two decades in software, and I have moved with the landscape: Java → Ruby → Clojure →
-ClojureScript → and most recently ClojureDart for mobile and desktop. Over the past year
+ClojureScript → ClojureDart for mobile and desktop → and most recently
+[Jolt](https://github.com/jolt-lang/jolt), native Clojure on Chez Scheme. Over the past year
 a tiny team and I have shipped a fleet of production ClojureDart apps for iOS, Android
 and macOS, alongside Clojure backends and ClojureScript SPAs that share a single mental
-model end to end.
+model end to end. Outside work, most of my open-source time goes into Jolt: bindings,
+ports, a Java runtime, and fixes that travel upstream as far as Chez Scheme itself.
 
 My current interest is where functional programming meets AI-assisted development:
-building maintainable agentic workflows in Clojure, and sharing the patterns and pitfalls
-a small team learns by shipping at pace. When I'm not coding I'm writing experience
+building maintainable agentic workflows in Clojure and Jolt, and sharing the patterns and
+pitfalls a small team learns by shipping at pace. When I'm not coding I'm writing experience
 reports for developers who appreciate the art of elegant, productive engineering.
 
 🗣️ **Next up: [AI Engineer Sydney 2026](https://webdirections.org/ai-engineer/speakers/burin-choomnuan/)**
