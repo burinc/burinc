@@ -1,6 +1,6 @@
 # Burin Choomnuan
 
-**Senior Principal Engineer at NewsCorp Australia: ClojureDart, AI, full-stack.**
+**Senior Principal Engineer at NewsCorp Australia: Jolt, ClojureDart, AI, full-stack.**
 
 I've written software for two decades, in Java, then Ruby, then Clojure and ClojureScript.
 These days most of my open-source time goes into
