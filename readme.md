@@ -1,3 +1,5 @@
+![One Lisp, many runtimes: a map from Clojure to Jolt, jank, ClojureDart and the JVM, with the projects on each, and the talks along the bottom](images/header.png)
+
 # Burin Choomnuan
 
 **Senior Principal Engineer at NewsCorp Australia.**<br>
